@@ -1,0 +1,30 @@
+{
+    "name": "spec",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": [
+        ""
+    ],
+    "homepage": "http://JSLite.io",
+    "author": "jaywcjlove <398188662@qq.com>",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "licenses": "MIT",
+    "idoc": {
+        "theme": "default",
+        "md": [
+            "README.md",
+            "chart.md",
+            "css-style-guide.md",
+            "directory.md",
+            "e-json.md",
+            "html-style-guide.md",
+            "javascript-style-guide.md",
+            "less-code-style.md",
+            "module.md",
+            "package.md"
+        ]
+    }
+}
