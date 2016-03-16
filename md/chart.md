@@ -118,7 +118,7 @@
 
 图表库标准包含单图表类型的标准图表以及多图表类型混合的混搭图表：
 
-![标准图表类型](./chart/charts.jpg "标准图表类型")
+![标准图表类型](img/chart/charts.jpg "标准图表类型")
 
 ### line
 
@@ -134,10 +134,10 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/line1.jpg" alt="折线图" /> </td>
-            <td> <img src="./chart/line2.jpg" alt="堆积折线图" /> </td>
-            <td> <img src="./chart/line3.jpg" alt="面积图" /> </td>
-            <td> <img src="./chart/line4.jpg" alt="堆积面积图" /> </td>
+            <td> <img src="img/chart/line1.jpg" alt="折线图" /> </td>
+            <td> <img src="img/chart/line2.jpg" alt="堆积折线图" /> </td>
+            <td> <img src="img/chart/line3.jpg" alt="面积图" /> </td>
+            <td> <img src="img/chart/line4.jpg" alt="堆积面积图" /> </td>
         </tr>
     </tbody>
 </table>
@@ -157,10 +157,10 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/bar1.jpg" alt="柱形图" /> </td>
-            <td> <img src="./chart/bar2.jpg" alt="堆积柱形图" /> </td>
-            <td> <img src="./chart/bar3.jpg" alt="条形图" /> </td>
-            <td> <img src="./chart/bar4.jpg" alt="堆积条形图" /> </td>
+            <td> <img src="img/chart/bar1.jpg" alt="柱形图" /> </td>
+            <td> <img src="img/chart/bar2.jpg" alt="堆积柱形图" /> </td>
+            <td> <img src="img/chart/bar3.jpg" alt="条形图" /> </td>
+            <td> <img src="img/chart/bar4.jpg" alt="堆积条形图" /> </td>
         </tr>
     </tbody>
 </table>
@@ -178,8 +178,8 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/scatter1.jpg" alt="散点图" /> </td>
-            <td> <img src="./chart/scatter2.jpg" alt="气泡图" /> </td>
+            <td> <img src="img/chart/scatter1.jpg" alt="散点图" /> </td>
+            <td> <img src="img/chart/scatter2.jpg" alt="气泡图" /> </td>
         </tr>
     </tbody>
 </table>
@@ -197,8 +197,8 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/pie1.jpg" alt="饼图" /> </td>
-            <td> <img src="./chart/pie2.jpg" alt="圆环图" /> </td>
+            <td> <img src="img/chart/pie1.jpg" alt="饼图" /> </td>
+            <td> <img src="img/chart/pie2.jpg" alt="圆环图" /> </td>
         </tr>
     </tbody>
 </table>
@@ -216,8 +216,8 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/radar1.jpg" alt="雷达图" /> </td>
-            <td> <img src="./chart/radar2.jpg" alt="填充雷达图" /> </td>
+            <td> <img src="img/chart/radar1.jpg" alt="雷达图" /> </td>
+            <td> <img src="img/chart/radar2.jpg" alt="填充雷达图" /> </td>
         </tr>
     </tbody>
 </table>
@@ -438,7 +438,7 @@ myChart.setOption(option);
 </table>
 
 
-![图例](./chart/legend.jpg "")
+![图例](img/chart/legend.jpg "")
 
 #### legend.data
 
@@ -578,8 +578,8 @@ myChart.setOption(option);
     <tbody>
 
         <tr>
-            <td> <img src="./chart/tooltip1.jpg" alt="item触发" /> </td>
-            <td> <img src="./chart/tooltip2.jpg" alt="axis触发" /> </td>
+            <td> <img src="img/chart/tooltip1.jpg" alt="item触发" /> </td>
+            <td> <img src="img/chart/tooltip2.jpg" alt="axis触发" /> </td>
         </tr>
     </tbody>
 </table>
@@ -627,7 +627,7 @@ myChart.setOption(option);
 </table>
 
 
-![绘图网格](./chart/grid.jpg "") 
+![绘图网格](img/chart/grid.jpg "") 
 
 ### xAxis
 
@@ -784,12 +784,12 @@ boundaryGap端空白策略
 
         <tr>
             <td> boundaryGap: true </td>
-            <td> <img src="./chart/axisBoundaryGap1.jpg" alt="axisBoundaryGap1" /> </td>
+            <td> <img src="img/chart/axisBoundaryGap1.jpg" alt="axisBoundaryGap1" /> </td>
         </tr>
 
         <tr>
             <td> boundaryGap: false </td>
-            <td><img src="./chart/axisBoundaryGap.png" alt="axisBoundaryGap" /> </td>
+            <td><img src="img/chart/axisBoundaryGap.png" alt="axisBoundaryGap" /> </td>
         </tr>
     </tbody>
 </table>
@@ -797,7 +797,7 @@ boundaryGap端空白策略
 
 axis属性说明
 
-![axisDetail](./chart/axisDetail.jpg "")
+![axisDetail](img/chart/axisDetail.jpg "")
 
 #### axis.axisLabel
 
@@ -1404,7 +1404,7 @@ itemStyle: {
 - 通过 option.series.* 设置特定系列特殊配置，其优先级高于 option 内的同名配置；
 - 通过 option.series.data.* 设置特定数据项的特殊配置，最高优先级；
 
-![多级控制](./chart/multiControl.jpg "")
+![多级控制](img/chart/multiControl.jpg "")
 
 ## 附录：一个直观的事例
 

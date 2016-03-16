@@ -17,14 +17,15 @@
         "md": [
             "README.md",
             "chart.md",
-            "css-style-guide.md",
             "directory.md",
             "e-json.md",
-            "html-style-guide.md",
-            "javascript-style-guide.md",
-            "less-code-style.md",
             "module.md",
-            "package.md"
+            "package.md",
+            "css.md",
+            "es-next.md",
+            "html.md",
+            "javascript.md",
+            "less-code.md"
         ]
     }
 }

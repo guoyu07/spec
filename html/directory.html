@@ -2,46 +2,67 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>spec</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
 </head>
 <body>
-<div class="nav">
-<div class="logo">spec</div>
-<ul><li><a href="../index.html">README</a></li><li><a href="../html/chart.html">chart</a></li><li><a href="../html/css-style-guide.html">css-style-guide</a></li><li class="active"><a href="../html/directory.html">directory</a></li><li><a href="../html/e-json.html">e-json</a></li><li><a href="../html/html-style-guide.html">html-style-guide</a></li><li><a href="../html/javascript-style-guide.html">javascript-style-guide</a></li><li><a href="../html/less-code-style.html">less-code-style</a></li><li><a href="../html/module.html">module</a></li><li><a href="../html/package.html">package</a></li></ul></div>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                spec
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">README</a></li><li><a href="../html/chart.html">chart</a></li><li class="active"><a href="../html/directory.html">directory</a></li><li><a href="../html/e-json.html">e-json</a></li><li><a href="../html/module.html">module</a></li><li><a href="../html/package.html">package</a></li><li><a href="../html/css.html">css</a></li><li><a href="../html/es-next.html">es-next</a></li><li><a href="../html/html.html">html</a></li><li><a href="../html/javascript.html">javascript</a></li><li><a href="../html/less-code.html">less-code</a></li></ul>    
+        </div>
+        
+        
+        <div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/spec">fork on github</a></div>
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
 
 
-<div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/spec"></a></div>
 
-<div class="warpper">
+
+<div class="container">
 
     <div class="page-toc">
-        <ul><li><a href="#项目目录结构规范">项目目录结构规范</a><ul><li><a href="#简介">简介</a><ul><li><a href="#编撰">编撰</a></li><li><a href="#要求">要求</a></li><li><a href="#规范说明约定">规范说明约定</a></li></ul></li><li><a href="#资源分类">资源分类</a></li><li><a href="#目录命名原则">目录命名原则</a></li><li><a href="#目录划分">目录划分</a><ul><li><a href="#${root}目录结构划分">${root}目录结构划分</a></li><li><a href="#业务项目目录结构划分">业务项目目录结构划分</a><ul><li><a href="#项目代号">项目代号</a></li><li><a href="#根据业务逻辑划分src目录结构">根据业务逻辑划分src目录结构</a></li><li><a href="#业务目录划分原则">业务目录划分原则</a></li><li><a href="#业务项目目录划分示例">业务项目目录划分示例</a></li></ul></li><li><a href="#包项目目录结构划分">包项目目录结构划分</a><ul><li><a href="#包项目src目录结构划分">包项目src目录结构划分</a></li></ul></li></ul></li><li><a href="#常用目录">常用目录</a><ul><li><a href="#一级目录">一级目录</a><ul><li><a href="#src">src</a></li><li><a href="#dep">dep</a></li><li><a href="#tool">tool</a></li><li><a href="#test">test</a></li><li><a href="#doc">doc</a></li><li><a href="#entry">entry</a></li><li><a href="#asset">asset</a></li></ul></li><li><a href="#资源目录">资源目录</a><ul><li><a href="#js">js</a></li><li><a href="#css">css</a></li><li><a href="#img">img</a></li><li><a href="#tpl">tpl</a></li><li><a href="#font">font</a></li><li><a href="#swf">swf</a></li></ul></li><li><a href="#业务目录">业务目录</a><ul><li><a href="#common">common</a></li></ul></li></ul></li><li><a href="#FAQ">FAQ</a><ul><li><a href="#为啥biz下面没资源类型目录了？">为啥biz下面没资源类型目录了？</a></li></ul></li></ul></li></ul>
+        <ul><li><a href="#t0项目目录结构规范">项目目录结构规范</a><ul><li><a href="#t1简介">简介</a><ul><li><a href="#t2编撰">编撰</a></li><li><a href="#t3要求">要求</a></li><li><a href="#t4规范说明约定">规范说明约定</a></li></ul></li><li><a href="#t5资源分类">资源分类</a></li><li><a href="#t6目录命名原则">目录命名原则</a></li><li><a href="#t7目录划分">目录划分</a><ul><li><a href="#t8${root}目录结构划分">${root}目录结构划分</a></li><li><a href="#t9业务项目目录结构划分">业务项目目录结构划分</a><ul><li><a href="#t10项目代号">项目代号</a></li><li><a href="#t11根据业务逻辑划分src目录结构">根据业务逻辑划分src目录结构</a></li><li><a href="#t12业务目录划分原则">业务目录划分原则</a></li><li><a href="#t13业务项目目录划分示例">业务项目目录划分示例</a></li></ul></li><li><a href="#t14包项目目录结构划分">包项目目录结构划分</a><ul><li><a href="#t15包项目src目录结构划分">包项目src目录结构划分</a></li></ul></li></ul></li><li><a href="#t16常用目录">常用目录</a><ul><li><a href="#t17一级目录">一级目录</a><ul><li><a href="#t18src">src</a></li><li><a href="#t19dep">dep</a></li><li><a href="#t20tool">tool</a></li><li><a href="#t21test">test</a></li><li><a href="#t22doc">doc</a></li><li><a href="#t23entry">entry</a></li><li><a href="#t24asset">asset</a></li></ul></li><li><a href="#t25资源目录">资源目录</a><ul><li><a href="#t26js">js</a></li><li><a href="#t27css">css</a></li><li><a href="#t28img">img</a></li><li><a href="#t29tpl">tpl</a></li><li><a href="#t30font">font</a></li><li><a href="#t31swf">swf</a></li></ul></li><li><a href="#t32业务目录">业务目录</a><ul><li><a href="#t33common">common</a></li></ul></li></ul></li><li><a href="#t34FAQ">FAQ</a><ul><li><a href="#t35为啥biz下面没资源类型目录了？">为啥biz下面没资源类型目录了？</a></li></ul></li></ul></li></ul>
     </div>
     
     <div class="content markdown-body">
-        <h1 id="&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303;">&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303; <a href="#&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303;"> # </a></h1>
-<h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB; <a href="#&#x7B80;&#x4ECB;"> # </a></h2>
+        <h1 id="t0&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303;">&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303; <a href="#t0&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x89C4;&#x8303;"> # </a></h1>
+<h2 id="t1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB; <a href="#t1&#x7B80;&#x4ECB;"> # </a></h2>
 <p>&#x8BE5;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x662F;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x4F7F;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x5E76;&#x65B9;&#x4FBF;&#x6784;&#x5EFA;&#x4E0E;&#x7BA1;&#x7406;&#x3002;</p>
-<h3 id="&#x7F16;&#x64B0;">&#x7F16;&#x64B0; <a href="#&#x7F16;&#x64B0;"> # </a></h3>
+<h3 id="t2&#x7F16;&#x64B0;">&#x7F16;&#x64B0; <a href="#t2&#x7F16;&#x64B0;"> # </a></h3>
 <p>&#x674E;&#x7389;&#x5317;&#x3001;erik&#x3001;&#x9EC4;&#x540E;&#x9526;&#x3001;&#x738B;&#x6768;&#x3001;&#x5F20;&#x7ACB;&#x7406;&#x3001;&#x8D75;&#x96F7;&#x3001;&#x9648;&#x65B0;&#x4E50;&#x3001;&#x5218;&#x607A;&#x534E;&#x3002;</p>
 <p>&#x672C;&#x6587;&#x6863;&#x7531;<code>&#x5546;&#x4E1A;&#x8FD0;&#x8425;&#x4F53;&#x7CFB;&#x524D;&#x7AEF;&#x6280;&#x672F;&#x7EC4;</code>&#x5BA1;&#x6821;&#x53D1;&#x5E03;&#x3002;</p>
-<h3 id="&#x8981;&#x6C42;">&#x8981;&#x6C42; <a href="#&#x8981;&#x6C42;"> # </a></h3>
+<h3 id="t3&#x8981;&#x6C42;">&#x8981;&#x6C42; <a href="#t3&#x8981;&#x6C42;"> # </a></h3>
 <p>&#x5728;&#x672C;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EE5;&#x4E2D;&#x6587;+&#x62EC;&#x53F7;&#x5305;&#x542B;&#x7684;&#x5173;&#x952E;&#x5B57;&#x82F1;&#x6587;&#x8868;&#x793A;&#xFF1A;&#x5FC5;&#x987B;(MUST)&#x3002;&#x5173;&#x952E;&#x5B57;&quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot;&#x88AB;&#x5B9A;&#x4E49;&#x5728;rfc2119&#x4E2D;&#x3002;</p>
-<h3 id="&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A;">&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A; <a href="#&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A;"> # </a></h3>
+<h3 id="t4&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A;">&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A; <a href="#t4&#x89C4;&#x8303;&#x8BF4;&#x660E;&#x7EA6;&#x5B9A;"> # </a></h3>
 <p>&#x4EE5;&#x4E0B;&#x89C4;&#x8303;&#x6587;&#x6863;&#x4E2D;&#xFF1A;</p>
 <ol>
 <li><code>&#x9879;&#x76EE;</code>&#x5305;&#x542B;&#x4F46;&#x4E0D;&#x9650;&#x4E8E;<code>&#x4E1A;&#x52A1;&#x9879;&#x76EE;</code>&#x548C;<code>&#x5305;&#x9879;&#x76EE;</code>&#x3002;</li>
 <li><code>${root}</code>&#x8868;&#x793A;<code>&#x9879;&#x76EE;</code>&#x7684;&#x6839;&#x76EE;&#x5F55;&#x3002;</li>
 </ol>
 <p><a name="restype"></a></p>
-<h2 id="&#x8D44;&#x6E90;&#x5206;&#x7C7B;">&#x8D44;&#x6E90;&#x5206;&#x7C7B; <a href="#&#x8D44;&#x6E90;&#x5206;&#x7C7B;"> # </a></h2>
+<h2 id="t5&#x8D44;&#x6E90;&#x5206;&#x7C7B;">&#x8D44;&#x6E90;&#x5206;&#x7C7B; <a href="#t5&#x8D44;&#x6E90;&#x5206;&#x7C7B;"> # </a></h2>
 <p><code>&#x8D44;&#x6E90;</code>&#x5206;&#x6210;&#x4E24;&#x5927;&#x7C7B;&#xFF1A;</p>
 <ol>
 <li><code>&#x6E90;&#x4EE3;&#x7801;&#x8D44;&#x6E90;</code>&#xFF1A;&#x6307;&#x5F00;&#x53D1;&#x8005;&#x7F16;&#x5199;&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x5305;&#x62EC;<code>js</code>&#x3001;<code>html</code>&#x3001;<code>css</code>&#x3001;<code>template</code>&#x7B49;&#x3002;</li>
 <li><code>&#x5185;&#x5BB9;&#x8D44;&#x6E90;</code>&#xFF1A;&#x6307;&#x5E0C;&#x671B;&#x505A;&#x4E3A;&#x5185;&#x5BB9;&#x63D0;&#x4F9B;&#x7ED9;&#x8BBF;&#x95EE;&#x8005;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x5305;&#x62EC;<code>&#x56FE;&#x7247;</code>&#x3001;<code>&#x5B57;&#x4F53;</code>&#x3001;<code>flash</code>&#x3001;<code>pdf</code>&#x7B49;&#x3002;</li>
 </ol>
-<h2 id="&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219;">&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219; <a href="#&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219;"> # </a></h2>
+<h2 id="t6&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219;">&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219; <a href="#t6&#x76EE;&#x5F55;&#x547D;&#x540D;&#x539F;&#x5219;"> # </a></h2>
 <ol>
 <li>&#x7B80;&#x6D01;&#x3002;&#x6709;&#x4E60;&#x60EF;&#x6027;&#x7F29;&#x5199;&#x7684;&#x5355;&#x8BCD; <em>&#x5FC5;&#x987B;(MUST)</em> &#x91C7;&#x7528;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x7684;&#x7F29;&#x5199;&#x3002;&#x5982;&#xFF1A;&#x6E90;&#x4EE3;&#x7801;&#x76EE;&#x5F55;&#x4F7F;&#x7528;<code>src</code>&#xFF0C;&#x4E0D;&#x4F7F;&#x7528;<code>source</code>&#x3002;&#x4E0B;&#x9762;&#x662F;&#x66F4;&#x591A;&#x4F8B;&#x5B50;&#xFF1A;<ol>
 <li><code>img</code>: &#x56FE;&#x7247;&#x3002; <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x4F7F;&#x7528;<code>image</code>&#x3001;<code>images</code>&#x3001;<code>imgs</code>&#x7B49;&#x3002;</li>
@@ -54,9 +75,9 @@
 </li>
 <li><em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x4F7F;&#x7528;&#x590D;&#x6570;&#x5F62;&#x5F0F;&#x3002;&#x5982;&#xFF1A;<code>imgs</code>&#x3001;<code>docs</code>&#x662F;&#x4E0D;&#x88AB;&#x5141;&#x8BB8;&#x7684;&#x3002;</li>
 </ol>
-<h2 id="&#x76EE;&#x5F55;&#x5212;&#x5206;">&#x76EE;&#x5F55;&#x5212;&#x5206; <a href="#&#x76EE;&#x5F55;&#x5212;&#x5206;"> # </a></h2>
+<h2 id="t7&#x76EE;&#x5F55;&#x5212;&#x5206;">&#x76EE;&#x5F55;&#x5212;&#x5206; <a href="#t7&#x76EE;&#x5F55;&#x5212;&#x5206;"> # </a></h2>
 <p><a name="root"></a></p>
-<h3 id="${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
+<h3 id="t8${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#t8${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
 <p>&#x5728;${root}&#x4E0B;&#xFF0C;&#x76EE;&#x5F55;&#x7ED3;&#x6784; <em>&#x5FC5;&#x987B;(MUST)</em> &#x6309;&#x7167;<code>&#x804C;&#x80FD;</code>&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF0C; <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x5C06;<code>&#x8D44;&#x6E90;&#x7C7B;&#x578B;</code>&#x6216;<code>&#x4E1A;&#x52A1;&#x903B;&#x8F91;</code>&#x5212;&#x5206;&#x7684;&#x76EE;&#x5F55;&#x76F4;&#x63A5;&#x7F6E;&#x4E8E;${root}&#x4E0B;&#x3002;</p>
 <p>&#x5E38;&#x7528;&#x7684;&#x76EE;&#x5F55;&#x6709;<code>src</code>&#x3001;<code>doc</code>&#x3001;<code>dep</code>&#x3001;<code>test</code>&#x7B49;&#x3002;&#x8BE6;&#x7EC6;&#x8BF7;&#x53C2;&#x8003;<a href="#level1">&#x4E00;&#x7EA7;&#x76EE;&#x5F55;&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;</a></p>
 <pre><code>${root}/
@@ -65,9 +86,9 @@
     doc/
     dep/
     ...
-</code></pre><h3 id="&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
+</code></pre><h3 id="t9&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#t9&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
 <p><code>&#x4E1A;&#x52A1;&#x9879;&#x76EE;</code>&#x7684;${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#x9075;&#x5FAA;<a href="#root">${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;</a>&#x3002;</p>
-<h4 id="&#x9879;&#x76EE;&#x4EE3;&#x53F7;">&#x9879;&#x76EE;&#x4EE3;&#x53F7; <a href="#&#x9879;&#x76EE;&#x4EE3;&#x53F7;"> # </a></h4>
+<h4 id="t10&#x9879;&#x76EE;&#x4EE3;&#x53F7;">&#x9879;&#x76EE;&#x4EE3;&#x53F7; <a href="#t10&#x9879;&#x76EE;&#x4EE3;&#x53F7;"> # </a></h4>
 <p>&#x4E1A;&#x52A1;&#x9879;&#x76EE; <em>&#x53EF;&#x4EE5;(SHOULD)</em> &#x4E3A;&#x9879;&#x76EE;&#x8D77;&#x4E00;&#x4E2A;&#x4EE3;&#x53F7;&#x540D;&#x79F0;&#x3002;&#x4EE3;&#x53F7;&#x540D;&#x79F0; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#xFF0C;&#x4E0D;&#x5B9C;&#x8FC7;&#x957F;&#x3002;&#x4F8B;&#xFF1A;&#x5317;&#x6597;&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x53F7;&#x4E3A;<code>triones</code>&#xFF0C;&#x54E5;&#x4F26;&#x5E03;&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x53F7;&#x4E3A;<code>clb</code>&#xFF0C;&#x767E;&#x5EA6;&#x9526;&#x56CA;&#x7684;&#x9879;&#x76EE;&#x4EE3;&#x53F7;&#x4E3A;<code>jn</code>&#x3002;&#x9879;&#x76EE;&#x4EE3;&#x53F7;&#x6709;&#x5229;&#x4E8E;&#x533A;&#x5206;&#x4E0D;&#x540C;&#x9879;&#x76EE;&#xFF0C;&#x4E3A;&#x672A;&#x6765;&#x9879;&#x76EE;&#x4E4B;&#x95F4;&#x7684;&#x91CD;&#x7528;&#x7559;&#x4E0B;&#x6269;&#x5C55;&#x7684;&#x540E;&#x8DEF;&#x3002;</p>
 <p>&#x5728;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x65F6;&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x7528;&#x5982;&#x4E0B;<a href="module.md#config">&#x52A0;&#x8F7D;&#x5668;&#x914D;&#x7F6E;</a>&#xFF0C;&#x5C06;&#x9879;&#x76EE;&#x4EE3;&#x53F7;&#x6307;&#x5411;<code>src</code>&#x3002;</p>
 <pre><code class="lang-javascript">{
@@ -77,7 +98,7 @@
     }
 }
 </code></pre>
-<h4 id="&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784; <a href="#&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;"> # </a></h4>
+<h4 id="t11&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784; <a href="#t11&#x6839;&#x636E;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x5212;&#x5206;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;"> # </a></h4>
 <p><code>&#x4E1A;&#x52A1;&#x9879;&#x76EE;</code>&#x7684;<code>src</code>&#x76EE;&#x5F55;&#x5185;&#xFF0C;&#x7EDD;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5; <em>&#x5E94;&#x5F53;(SHOULD)</em> &#x6839;&#x636E;<code>&#x4E1A;&#x52A1;&#x903B;&#x8F91;</code>&#x5212;&#x5206;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x3002;&#x5212;&#x5206;&#x51FA;&#x7684;&#x5B50;&#x76EE;&#x5F55;&#xFF08;&#x6BD4;&#x5982;<a href="#bizdirexample">&#x4F8B;&#x5B50;</a>&#x4E2D;&#x7684;<code>biz1</code>&#xFF09;&#x6211;&#x4EEC;&#x79F0;&#x4E3A;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x3002;</p>
 <p><code>src</code>&#x4E0B; <em>&#x5FC5;&#x987B;(MUST)</em> &#x53EA;&#x5305;&#x542B;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x4E0E;<code>common</code>&#x76EE;&#x5F55;&#x3002;<code>&#x4E1A;&#x52A1;&#x516C;&#x5171;&#x8D44;&#x6E90;</code> <em>&#x5FC5;&#x987B;(MUST)</em> &#x547D;&#x540D;&#x4E3A;<code>common</code>&#x3002;<code>common</code>&#x76EE;&#x5F55;&#x505A;&#x4E3A;<code>&#x4E1A;&#x52A1;&#x516C;&#x5171;&#x8D44;&#x6E90;</code>&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x4E5F;&#x89C6;&#x5982;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x3002;</p>
 <pre><code>${root}/
@@ -92,7 +113,7 @@
     src/
         foo.js
 </code></pre><p><a name="bizdirprinciple"></a></p>
-<h4 id="&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219;">&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219; <a href="#&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219;"> # </a></h4>
+<h4 id="t12&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219;">&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219; <a href="#t12&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219;"> # </a></h4>
 <ol>
 <li><code>JS&#x8D44;&#x6E90;</code> <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x6309;<code>&#x8D44;&#x6E90;&#x7C7B;&#x578B;</code>&#x5212;&#x5206;&#x76EE;&#x5F55;&#xFF0C; <em>&#x5FC5;&#x987B;(MUST)</em> &#x6309;<code>&#x4E1A;&#x52A1;&#x903B;&#x8F91;</code>&#x5212;&#x5206;&#x76EE;&#x5F55;&#x3002;<code>JS&#x8D44;&#x6E90;</code>&#x5E94;&#x76F4;&#x63A5;&#x7F6E;&#x4E8E;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x4E0B;&#x3002;&#x5373;&#xFF1A;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x4E0B;&#x4E0D;&#x5141;&#x8BB8;&#x51FA;&#x73B0;<code>js</code>&#x76EE;&#x5F55;&#x3002;</li>
 <li>&#x9664;<code>JS&#x8D44;&#x6E90;</code>&#x5916;&#x7684;<code>&#x6E90;&#x6587;&#x4EF6;&#x8D44;&#x6E90;</code>&#xFF0C;&#x5F53;&#x8D44;&#x6E90;&#x6570;&#x91CF;&#x8F83;&#x591A;&#x65F6;&#xFF0C;&#x4E3A;&#x65B9;&#x4FBF;&#x7BA1;&#x7406;&#xFF0C; <em>&#x5141;&#x8BB8;(SHOULD)</em> &#x6309;<code>&#x8D44;&#x6E90;&#x7C7B;&#x578B;</code>&#x5212;&#x5206;&#x76EE;&#x5F55;&#x3002;&#x5373;&#xFF1A;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x4E0B;&#x5141;&#x8BB8;&#x51FA;&#x73B0;<code>css</code>&#x3001;<code>tpl</code>&#x76EE;&#x5F55;&#x3002;</li>
@@ -130,7 +151,7 @@
     remove.js
 </code></pre><p><code>&#x6E90;&#x6587;&#x4EF6;&#x8D44;&#x6E90;</code>&#x548C;<code>&#x5185;&#x5BB9;&#x8D44;&#x6E90;</code>&#x8BF7;&#x53C2;&#x8003;<a href="#restype">&#x8D44;&#x6E90;&#x5206;&#x7C7B;</a>&#x7AE0;&#x8282;&#xFF0C;&#x5E38;&#x7528;<code>&#x8D44;&#x6E90;&#x76EE;&#x5F55;</code>&#x8BF7;&#x53C2;&#x8003;<a href="#resdir">&#x8D44;&#x6E90;&#x76EE;&#x5F55;</a>&#x7AE0;&#x8282;&#xFF0C;&#x5E38;&#x7528;<code>&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</code>&#x8BF7;&#x53C2;&#x8003;<a href="#bizdir">&#x4E1A;&#x52A1;&#x76EE;&#x5F55;</a>&#x7AE0;&#x8282;&#x3002;</p>
 <p><a name="bizdirexample"></a></p>
-<h4 id="&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B;">&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B; <a href="#&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B;"> # </a></h4>
+<h4 id="t13&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B;">&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B; <a href="#t13&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x793A;&#x4F8B;"> # </a></h4>
 <pre><code>${root}/
     src/
         common/
@@ -164,10 +185,10 @@
     main.html
     ......
 </code></pre><p><a name="packagedir"></a></p>
-<h3 id="&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
+<h3 id="t14&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#t14&#x5305;&#x9879;&#x76EE;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h3>
 <p><code>&#x5305;&#x9879;&#x76EE;</code>&#x7684;${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;&#x9075;&#x5FAA;<a href="#root">${root}&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;</a>&#x3002;</p>
 <p><a name="packagesrc"></a></p>
-<h4 id="&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h4>
+<h4 id="t15&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;">&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206; <a href="#t15&#x5305;&#x9879;&#x76EE;src&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x5212;&#x5206;"> # </a></h4>
 <p><code>&#x5305;</code>&#x662F;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x72EC;&#x7ACB;&#x529F;&#x80FD;&#xFF0C;&#x6709;&#x590D;&#x7528;&#x4EF7;&#x503C;&#x7684;&#x4EE3;&#x7801;&#x96C6;&#x3002;&#x6309;&#x7167;&#x901A;&#x5E38;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x4E00;&#x4E2A;<code>&#x5305;&#x9879;&#x76EE;</code>&#x4E0D;&#x5E94;&#x8BE5;&#x7279;&#x522B;&#x590D;&#x6742;&#x3002;</p>
 <p>&#x6240;&#x4EE5;&#xFF0C;<code>&#x5305;</code>&#x53EF;&#x89C6;&#x5982;&#x4E00;&#x4E2A;&#x4E0D;&#x592A;&#x590D;&#x6742;&#x7684;<code>&#x4E1A;&#x52A1;</code>&#xFF0C;&#x5176;<code>src</code>&#x4E0B;&#x7684;&#x5212;&#x5206;&#x539F;&#x5219;&#x4E0E;<code>&#x4E1A;&#x52A1;&#x9879;&#x76EE;</code>&#x7684;<a href="#bizdirprinciple">&#x4E1A;&#x52A1;&#x76EE;&#x5F55;&#x5212;&#x5206;&#x539F;&#x5219;</a>&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#x3002;</p>
 <pre><code>${root}/
@@ -188,24 +209,24 @@
     doc/
     package.json
     ...
-</code></pre><h2 id="&#x5E38;&#x7528;&#x76EE;&#x5F55;">&#x5E38;&#x7528;&#x76EE;&#x5F55; <a href="#&#x5E38;&#x7528;&#x76EE;&#x5F55;"> # </a></h2>
+</code></pre><h2 id="t16&#x5E38;&#x7528;&#x76EE;&#x5F55;">&#x5E38;&#x7528;&#x76EE;&#x5F55; <a href="#t16&#x5E38;&#x7528;&#x76EE;&#x5F55;"> # </a></h2>
 <p><a name="level1"></a></p>
-<h3 id="&#x4E00;&#x7EA7;&#x76EE;&#x5F55;">&#x4E00;&#x7EA7;&#x76EE;&#x5F55; <a href="#&#x4E00;&#x7EA7;&#x76EE;&#x5F55;"> # </a></h3>
+<h3 id="t17&#x4E00;&#x7EA7;&#x76EE;&#x5F55;">&#x4E00;&#x7EA7;&#x76EE;&#x5F55; <a href="#t17&#x4E00;&#x7EA7;&#x76EE;&#x5F55;"> # </a></h3>
 <p>&#x76F4;&#x63A5;&#x7F6E;&#x4E8E;<code>${root}</code>&#x4E0B;&#x7684;&#x76EE;&#x5F55;&#x79F0;&#x4F5C;<code>&#x4E00;&#x7EA7;&#x76EE;&#x5F55;</code>&#x3002;&#x4E00;&#x7EA7;&#x76EE;&#x5F55; <em>&#x5FC5;&#x987B;(MUST)</em> &#x5177;&#x6709;&#x67D0;&#x79CD;<code>&#x804C;&#x80FD;</code>&#x5C5E;&#x6027;&#x3002;</p>
 <p>&#x9664;&#x4E86;&#x4E0B;&#x9762;&#x5217;&#x4E3E;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x76EE;&#x5F55;&#x4E4B;&#x5916;&#xFF0C;<code>${root}</code>&#x4E0B;&#x9762;&#x4E5F;&#x53EF;&#x4EE5;&#x653E;&#x7F6E;&#x4E00;&#x4E9B;&#x8DDF;&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x76F8;&#x5173;&#x7684;&#x6587;&#x4EF6;&#xFF0C;&#x4F8B;&#x5982;<code>build.sh</code>&#xFF0C;<code>build.xml</code>&#xFF0C;<code>Makefile</code>&#xFF0C;<code>Gruntfile</code>&#x7B49;&#x7B49;.</p>
-<h4 id="src">src <a href="#src"> # </a></h4>
+<h4 id="t18src">src <a href="#t18src"> # </a></h4>
 <p><code>src</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5F00;&#x53D1;&#x65F6;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x53D1;&#x5E03;&#x65F6; <em>&#x5FC5;&#x987B;(MUST)</em> &#x88AB;&#x5220;&#x9664;&#x3002;</p>
-<h4 id="dep">dep <a href="#dep"> # </a></h4>
+<h4 id="t19dep">dep <a href="#t19dep"> # </a></h4>
 <p><code>dep</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>&#x9879;&#x76EE;</code>&#x5F15;&#x5165;&#x4F9D;&#x8D56;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x3002;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x5185;&#x5BB9;&#x901A;&#x8FC7;&#x5E73;&#x53F0;&#x5DE5;&#x5177;&#x7BA1;&#x7406;&#xFF0C;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x4EBA;&#x5458; <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x66F4;&#x6539;<code>dep</code>&#x76EE;&#x5F55;&#x4E0B;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x7684;&#x4EFB;&#x4F55;&#x5185;&#x5BB9;&#x3002;</p>
 <p>&#x5F53;&#x9879;&#x76EE;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5F15;&#x5165;&#x7684;&#x7B2C;&#x4E09;&#x65B9;&#x4EE3;&#x7801;&#x65F6;&#xFF0C;&#x7B2C;&#x4E09;&#x65B9;&#x5305;&#x5E94;&#x5C06;&#x6E90;&#x7801;&#x76F4;&#x63A5;&#x7F6E;&#x4E8E;<code>${root}/src</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x89C4;&#x5219;&#x89C1;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x89C4;&#x5B9A;&#x3002;</p>
 <p>&#x66F4;&#x591A;&#x5173;&#x4E8E;<code>&#x5305;</code>&#x7684;&#x5185;&#x5BB9;&#x8BF7;&#x53C2;&#x8003; <a href="package.md">&#x5305;&#x7ED3;&#x6784;&#x89C4;&#x8303;</a></p>
-<h4 id="tool">tool <a href="#tool"> # </a></h4>
+<h4 id="t20tool">tool <a href="#t20tool"> # </a></h4>
 <p><code>tool</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5F00;&#x53D1;&#x65F6;&#x6216;&#x6784;&#x5EFA;&#x9636;&#x6BB5;&#x4F7F;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x3002;&#x8BE5;&#x76EE;&#x5F55;&#x5728;&#x53D1;&#x5E03;&#x65F6; <em>&#x5FC5;&#x987B;(MUST)</em> &#x88AB;&#x5220;&#x9664;&#x3002;</p>
-<h4 id="test">test <a href="#test"> # </a></h4>
+<h4 id="t21test">test <a href="#t21test"> # </a></h4>
 <p><code>test</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x6D4B;&#x8BD5;&#x7528;&#x4F8B;&#x4EE5;&#x53CA;&#x5F00;&#x53D1;&#x9636;&#x6BB5;&#x7684;&#x6A21;&#x62DF;&#x6570;&#x636E;&#x3002;&#x8BE5;&#x76EE;&#x5F55;&#x5728;&#x53D1;&#x5E03;&#x65F6; <em>&#x5FC5;&#x987B;(MUST)</em> &#x88AB;&#x5220;&#x9664;&#x3002;</p>
-<h4 id="doc">doc <a href="#doc"> # </a></h4>
+<h4 id="t22doc">doc <a href="#t22doc"> # </a></h4>
 <p><code>doc</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x9879;&#x76EE;&#x6587;&#x6863;&#x3002;&#x9879;&#x76EE;&#x6587;&#x6863;&#x53EF;&#x80FD;&#x662F;&#x5F00;&#x53D1;&#x8005;&#x7EF4;&#x62A4;&#x7684;&#x6587;&#x6863;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x901A;&#x8FC7;&#x5DE5;&#x5177;&#x751F;&#x6210;&#x7684;&#x6587;&#x6863;&#x3002;</p>
-<h4 id="entry">entry <a href="#entry"> # </a></h4>
+<h4 id="t23entry">entry <a href="#t23entry"> # </a></h4>
 <p><code>entry</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x9879;&#x76EE;&#x7684;<code>&#x9875;&#x9762;&#x5165;&#x53E3;&#x6587;&#x4EF6;</code>&#xFF0C;&#x901A;&#x5E38;&#x662F;&#x4E0A;&#x7EBF;&#x540E;&#x53EF;&#x88AB;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x7684;&#x9759;&#x6001;&#x9875;&#x9762;&#x3002;</p>
 <p><code>RIA&#x9879;&#x76EE;</code>&#x901A;&#x5E38;&#x4F1A;&#x5305;&#x542B;&#x8F83;&#x5C11;&#x7684;<code>&#x9875;&#x9762;&#x5165;&#x53E3;&#x6587;&#x4EF6;</code>&#xFF0C;&#x5E38;&#x89C1;&#x7684;&#x662F;<code>main.html</code>&#xFF0C;&#x8FD9;&#x4E9B;&#x6587;&#x4EF6; <em>&#x53EF;&#x4EE5;(SHOULD)</em> &#x76F4;&#x63A5;&#x653E;&#x5728;<code>${root}</code>&#x76EE;&#x5F55;&#x4E0B;&#x3002;</p>
 <pre><code>${root}/
@@ -255,7 +276,7 @@
             css/
             img/
         index.html
-</code></pre><h4 id="asset">asset <a href="#asset"> # </a></h4>
+</code></pre><h4 id="t24asset">asset <a href="#t24asset"> # </a></h4>
 <p><code>asset</code>&#x76EE;&#x5F55;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x7528;&#x4E8E;<code>&#x7EBF;&#x4E0A;&#x8BBF;&#x95EE;</code>&#x7684;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x3002;</p>
 <p>&#x901A;&#x5E38;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x4F1A;&#x5BF9;<code>src</code>&#x76EE;&#x5F55;&#x548C;<code>dep</code>&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x5206;&#x6790;&#x3001;&#x5408;&#x5E76;&#x4E0E;&#x538B;&#x7F29;&#x7B49;&#xFF0C;&#x751F;&#x6210;&#x5230;<code>asset</code>&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x6240;&#x4EE5;&#x8BE5;&#x76EE;&#x5F55;&#x5C3D;&#x91CF;&#x907F;&#x514D;&#x624B;&#x5DE5;&#x7BA1;&#x7406;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x751F;&#x6210;&#x540E;&#x7684;<code>asset</code>&#x76EE;&#x5F55;&#x793A;&#x4F8B;&#xFF1A;</p>
 <pre><code>${root}/
@@ -271,9 +292,9 @@
         img/
         ...
 </code></pre><p><a name="resdir"></a></p>
-<h3 id="&#x8D44;&#x6E90;&#x76EE;&#x5F55;">&#x8D44;&#x6E90;&#x76EE;&#x5F55; <a href="#&#x8D44;&#x6E90;&#x76EE;&#x5F55;"> # </a></h3>
+<h3 id="t25&#x8D44;&#x6E90;&#x76EE;&#x5F55;">&#x8D44;&#x6E90;&#x76EE;&#x5F55; <a href="#t25&#x8D44;&#x6E90;&#x76EE;&#x5F55;"> # </a></h3>
 <p>&#x6309;<code>&#x8D44;&#x6E90;</code>&#x7C7B;&#x578B;&#x547D;&#x540D;&#x7684;&#x76EE;&#x5F55;&#x79F0;&#x4F5C;<code>&#x8D44;&#x6E90;&#x76EE;&#x5F55;</code>&#x3002;<code>&#x8D44;&#x6E90;&#x76EE;&#x5F55;</code> <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x76F4;&#x63A5;&#x7F6E;&#x4E8E;${root}&#x4E0B;&#x3002;</p>
-<h4 id="js">js <a href="#js"> # </a></h4>
+<h4 id="t26js">js <a href="#t26js"> # </a></h4>
 <p><code>js</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>js</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF08;&#x5305;&#x542B;&#x53EF;&#x7F16;&#x8BD1;&#x6210;<code>js</code>&#x7684;<code>coffeescript</code>&#x7B49;&#x8BED;&#x8A00;&#xFF09;&#x3002;<code>js</code>&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;.js&#xFF0C;<code>coffeescript&#x6587;&#x4EF6;</code>&#x540E;&#x7F00;&#x540D; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;.coffee&#x3002;</p>
 <p><code>js</code>&#x76EE;&#x5F55;&#x5185; <em>&#x5FC5;&#x987B;(MUST)</em> &#x5B58;&#x653E;<code>js</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;<code>js</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4E0D;&#x4E00;&#x5B9A;&#xFF08;MAY NOT&#xFF09;&#x5B58;&#x653E;&#x4E8E;<code>js</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
 <ol>
@@ -281,7 +302,7 @@
 <li>&#x5BF9;&#x4E8E;<code>asset</code>&#x76EE;&#x5F55;&#xFF0C;<code>js</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6; <em>&#x53EF;&#x4EE5;(SHOULD)</em> &#x5B58;&#x653E;&#x4E8E;<code>js</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x89C6;&#x6784;&#x5EFA;&#x884C;&#x4E3A;&#x51B3;&#x5B9A;&#x3002;</li>
 <li>&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;<code>&#x4E00;&#x7EA7;&#x76EE;&#x5F55;</code>&#x5185;&#xFF0C;<code>js</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6; <em>&#x53EF;&#x4EE5;(SHOULD)</em> &#x4E0D;&#x5B58;&#x653E;&#x4E8E;<code>js</code>&#x76EE;&#x5F55;&#x4E0B;&#x3002;</li>
 </ol>
-<h4 id="css">css <a href="#css"> # </a></h4>
+<h4 id="t27css">css <a href="#t27css"> # </a></h4>
 <p><code>css</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>css&#x8D44;&#x6E90;&#x6587;&#x4EF6;</code>&#xFF08;&#x5305;&#x542B;<code>less</code>&#xFF0C;<code>sass</code>&#x7B49;&#x52A8;&#x6001;&#x6837;&#x5F0F;&#x8868;&#x8BED;&#x8A00;&#xFF09;&#x3002;<code>css</code>&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;.css&#xFF0C;<code>less</code>&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;<code>.less</code>&#x3002;</p>
 <p><code>css</code>&#x76EE;&#x5F55;&#x5185; <em>&#x5FC5;&#x987B;(MUST)</em> &#x5B58;&#x653E;<code>css</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x4F46;<code>css</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x4E0D;&#x4E00;&#x5B9A;&#xFF08;MAY NOT&#xFF09;&#x5B58;&#x653E;&#x4E8E;<code>css</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF1A;</p>
 <ol>
@@ -291,7 +312,7 @@
 </ol>
 <p>&#x5173;&#x4E8E;css&#x5F15;&#x7528;&#x56FE;&#x7247;&#x7684;&#x4F4D;&#x7F6E;&#x8BF4;&#x660E;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;<a href="#imgdir">img</a>&#x7AE0;&#x8282;&#x3002;</p>
 <p><a name="imgdir"></a></p>
-<h4 id="img">img <a href="#img"> # </a></h4>
+<h4 id="t28img">img <a href="#t28img"> # </a></h4>
 <p><code>img</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>&#x56FE;&#x7247;&#x8D44;&#x6E90;&#x6587;&#x4EF6;</code>&#x3002;&#x5305;&#x62EC;<code>&#x9875;&#x9762;&#x76F4;&#x63A5;&#x5F15;&#x7528;</code>&#x7684;&#x56FE;&#x7247;&#x4E0E;<code>css&#x5F15;&#x7528;</code>&#x56FE;&#x7247;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x56FE;&#x7247;&#x8D44;&#x6E90;&#x6709;<code>gif/jpg/png/svg/bmp</code>&#x7B49;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;<code>css</code>&#x5F15;&#x7528;&#x7684;&#x56FE;&#x7247;&#xFF0C; <em>&#x5FC5;&#x987B;(MUST)</em> &#x653E;&#x5728;<code>./img</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;<code>.</code>&#x4EE3;&#x8868;&#x5F53;&#x524D;<code>css</code>&#x8D44;&#x6E90;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;</p>
 <p>&#x5BF9;&#x4E8E;<code>&#x9875;&#x9762;&#x76F4;&#x63A5;&#x5F15;&#x7528;</code>&#x7684;&#x56FE;&#x7247;&#xFF1A;</p>
@@ -299,20 +320,20 @@
 <li>&#x88AB;&#x591A;&#x9875;&#x9762;&#x5F15;&#x7528;&#x7684;&#x56FE;&#x7247; <em>&#x5E94;&#x8BE5;(SHOULD)</em> &#x653E;&#x5728;<code>${root}/src/common/img</code>&#x76EE;&#x5F55;&#x4E0B;&#x3002;</li>
 <li>&#x5355;&#x4E00;&#x9875;&#x9762;&#x5F15;&#x7528;&#x7684;&#x56FE;&#x7247; <em>&#x5E94;&#x8BE5;(SHOULD)</em> &#x653E;&#x5728;<code>./img</code>&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;<code>.</code>&#x4EE3;&#x8868;&#x5F53;&#x524D;&#x9875;&#x9762;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x3002;</li>
 </ol>
-<h4 id="tpl">tpl <a href="#tpl"> # </a></h4>
+<h4 id="t29tpl">tpl <a href="#t29tpl"> # </a></h4>
 <p><code>tpl</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>template</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;<code>template</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x540E;&#x7F00;&#x540D; <em>&#x53EF;&#x4EE5;(SHOULD)</em> &#x4E3A;<code>.html</code>&#x6216;<code>.tpl</code>&#x3002;</p>
 <p>&#x901A;&#x5E38;&#xFF0C;&#x5BF9;&#x4E8E;<code>RIA</code>&#x7CFB;&#x7EDF;&#xFF0C;<code>template</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x91C7;&#x7528;<code>.html</code>&#x540E;&#x7F00;&#x4F7F;&#x5176;&#x80FD;&#x591F;&#x88AB;<code>xhr</code>&#x52A0;&#x8F7D;&#x3002;</p>
-<h4 id="font">font <a href="#font"> # </a></h4>
+<h4 id="t30font">font <a href="#t30font"> # </a></h4>
 <p><code>font</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x5B57;&#x4F53;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x5B57;&#x4F53;&#x8D44;&#x6E90;&#x6709;<code>tff/woff/svg</code>&#x7B49;&#x3002;</p>
-<h4 id="swf">swf <a href="#swf"> # </a></h4>
+<h4 id="t31swf">swf <a href="#t31swf"> # </a></h4>
 <p><code>swf</code>&#x76EE;&#x5F55;&#x53EF;&#x7528;&#x4E8E;&#x5B58;&#x653E;<code>flash</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x3002;<code>flash</code>&#x8D44;&#x6E90;&#x6587;&#x4EF6; <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x7F6E;&#x4E8E;<code>img</code>&#x76EE;&#x5F55;&#x4E2D;&#x3002;</p>
 <p><a name="bizdir"></a></p>
-<h3 id="&#x4E1A;&#x52A1;&#x76EE;&#x5F55;">&#x4E1A;&#x52A1;&#x76EE;&#x5F55; <a href="#&#x4E1A;&#x52A1;&#x76EE;&#x5F55;"> # </a></h3>
+<h3 id="t32&#x4E1A;&#x52A1;&#x76EE;&#x5F55;">&#x4E1A;&#x52A1;&#x76EE;&#x5F55; <a href="#t32&#x4E1A;&#x52A1;&#x76EE;&#x5F55;"> # </a></h3>
 <p><a name="commondir"></a></p>
-<h4 id="common">common <a href="#common"> # </a></h4>
+<h4 id="t33common">common <a href="#t33common"> # </a></h4>
 <p><code>common</code>&#x76EE;&#x5F55;&#x4E3A;&#x4E1A;&#x52A1;&#x516C;&#x5171;&#x76EE;&#x5F55;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x653E;&#x4E1A;&#x52A1;&#x9879;&#x76EE;&#x7684;&#x4E1A;&#x52A1;&#x516C;&#x5171;&#x6587;&#x4EF6;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6839;&#x636E;<code>&#x4E1A;&#x52A1;&#x903B;&#x8F91;</code>&#x5212;&#x5206;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x65F6;&#xFF0C;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x547D;&#x540D; <em>&#x4E0D;&#x5141;&#x8BB8;(MUST NOT)</em> &#x4E3A;<code>common</code>&#x3002;</p>
-<h2 id="FAQ">FAQ <a href="#FAQ"> # </a></h2>
-<h3 id="&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F;">&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F; <a href="#&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F;"> # </a></h3>
+<h2 id="t34FAQ">FAQ <a href="#t34FAQ"> # </a></h2>
+<h3 id="t35&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F;">&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F; <a href="#t35&#x4E3A;&#x5565;biz&#x4E0B;&#x9762;&#x6CA1;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#x76EE;&#x5F55;&#x4E86;&#xFF1F;"> # </a></h3>
 <p>&#x5982;&#x679C;&#x5728;<code>biz</code>&#x4E0B;&#x7EE7;&#x7EED;&#x5212;&#x5206;<code>&#x8D44;&#x6E90;&#x76EE;&#x5F55;</code>&#xFF0C;&#x4EE3;&#x7801;&#x7684;&#x7ED3;&#x6784;&#x53EF;&#x80FD;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x5B50;&#x4E86;&#xFF1A;</p>
 <pre><code>${root}/
     src/
@@ -323,7 +344,7 @@
 
         <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
     </div>
-    
+
 </div>
 
 

@@ -2,35 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>spec</title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
 </head>
 <body>
-<div class="nav">
-<div class="logo">spec</div>
-<ul><li><a href="../index.html">README</a></li><li class="active"><a href="../html/chart.html">chart</a></li><li><a href="../html/css-style-guide.html">css-style-guide</a></li><li><a href="../html/directory.html">directory</a></li><li><a href="../html/e-json.html">e-json</a></li><li><a href="../html/html-style-guide.html">html-style-guide</a></li><li><a href="../html/javascript-style-guide.html">javascript-style-guide</a></li><li><a href="../html/less-code-style.html">less-code-style</a></li><li><a href="../html/module.html">module</a></li><li><a href="../html/package.html">package</a></li></ul></div>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                spec
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">README</a></li><li class="active"><a href="../html/chart.html">chart</a></li><li><a href="../html/directory.html">directory</a></li><li><a href="../html/e-json.html">e-json</a></li><li><a href="../html/module.html">module</a></li><li><a href="../html/package.html">package</a></li><li><a href="../html/css.html">css</a></li><li><a href="../html/es-next.html">es-next</a></li><li><a href="../html/html.html">html</a></li><li><a href="../html/javascript.html">javascript</a></li><li><a href="../html/less-code.html">less-code</a></li></ul>    
+        </div>
+        
+        
+        <div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/spec">fork on github</a></div>
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
 
 
-<div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/spec"></a></div>
 
-<div class="warpper">
+
+<div class="container">
 
     <div class="page-toc">
-        <ul><li><a href="#百度图表库标准（1.0）">百度图表库标准（1.0）</a><ul><li><a href="#简介">简介</a><ul><li><a href="#编撰">编撰</a></li><li><a href="#要求">要求</a></li></ul></li><li><a href="#名词解析">名词解析</a><ul><li><a href="#基本名词">基本名词</a></li><li><a href="#图表名词">图表名词</a></li></ul></li><li><a href="#图表类型">图表类型</a><ul><li><a href="#line">line</a></li><li><a href="#bar">bar</a></li><li><a href="#scatter">scatter</a></li><li><a href="#pie">pie</a></li><li><a href="#radar">radar</a></li></ul></li><li><a href="#初始化">初始化</a></li><li><a href="#方法">方法</a></li><li><a href="#选项">选项</a><ul><li><a href="#option">option</a></li><li><a href="#legend">legend</a><ul><li><a href="#legend.data">legend.data</a></li></ul></li><li><a href="#tooltip">tooltip</a></li><li><a href="#grid">grid</a></li><li><a href="#xAxis">xAxis</a></li><li><a href="#yAxis">yAxis</a></li><li><a href="#axis">axis</a><ul><li><a href="#axis.axisLabel">axis.axisLabel</a></li><li><a href="#axis.data">axis.data</a></li></ul></li><li><a href="#series">series</a><ul><li><a href="#series.data">series.data</a></li></ul></li><li><a href="#itemStyle">itemStyle</a></li><li><a href="#lineStyle">lineStyle</a></li><li><a href="#areaStyle">areaStyle</a></li><li><a href="#textStyle">textStyle</a></li><li><a href="#loadingOption">loadingOption</a></li><li><a href="#多级控制设计">多级控制设计</a></li></ul></li><li><a href="#附录：一个直观的事例">附录：一个直观的事例</a></li></ul></li></ul>
+        <ul><li><a href="#t0百度图表库标准（1.0）">百度图表库标准（1.0）</a><ul><li><a href="#t1简介">简介</a><ul><li><a href="#t2编撰">编撰</a></li><li><a href="#t3要求">要求</a></li></ul></li><li><a href="#t4名词解析">名词解析</a><ul><li><a href="#t5基本名词">基本名词</a></li><li><a href="#t6图表名词">图表名词</a></li></ul></li><li><a href="#t7图表类型">图表类型</a><ul><li><a href="#t8line">line</a></li><li><a href="#t9bar">bar</a></li><li><a href="#t10scatter">scatter</a></li><li><a href="#t11pie">pie</a></li><li><a href="#t12radar">radar</a></li></ul></li><li><a href="#t13初始化">初始化</a></li><li><a href="#t14方法">方法</a></li><li><a href="#t15选项">选项</a><ul><li><a href="#t16option">option</a></li><li><a href="#t17legend">legend</a><ul><li><a href="#t18legend.data">legend.data</a></li></ul></li><li><a href="#t19tooltip">tooltip</a></li><li><a href="#t20grid">grid</a></li><li><a href="#t21xAxis">xAxis</a></li><li><a href="#t22yAxis">yAxis</a></li><li><a href="#t23axis">axis</a><ul><li><a href="#t24axis.axisLabel">axis.axisLabel</a></li><li><a href="#t25axis.data">axis.data</a></li></ul></li><li><a href="#t26series">series</a><ul><li><a href="#t27series.data">series.data</a></li></ul></li><li><a href="#t28itemStyle">itemStyle</a></li><li><a href="#t29lineStyle">lineStyle</a></li><li><a href="#t30areaStyle">areaStyle</a></li><li><a href="#t31textStyle">textStyle</a></li><li><a href="#t32loadingOption">loadingOption</a></li><li><a href="#t33多级控制设计">多级控制设计</a></li></ul></li><li><a href="#t34附录：一个直观的事例">附录：一个直观的事例</a></li></ul></li></ul>
     </div>
     
     <div class="content markdown-body">
-        <h1 id="&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09;">&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09; <a href="#&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09;"> # </a></h1>
-<h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB; <a href="#&#x7B80;&#x4ECB;"> # </a></h2>
+        <h1 id="t0&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09;">&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09; <a href="#t0&#x767E;&#x5EA6;&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#xFF08;1.0&#xFF09;"> # </a></h1>
+<h2 id="t1&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB; <a href="#t1&#x7B80;&#x4ECB;"> # </a></h2>
 <p>&#x56FE;&#x8868;&#x5728;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x4EA7;&#x54C1;&#x4E2D;&#x90FD;&#x6709;&#x5E94;&#x7528;&#xFF0C;&#x672C;&#x6587;&#x6863;&#x4E3B;&#x8981;&#x7684;&#x8BBE;&#x8BA1;&#x76EE;&#x6807;&#x662F;&#x89C4;&#x8303;&#x524D;&#x7AEF;&#x56FE;&#x8868;&#x5E93;&#x7684;&#x6807;&#x51C6;&#x56FE;&#x8868;&#x7C7B;&#x578B;&#x3001;&#x63A5;&#x53E3;&#x3001;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x53CA;&#x6837;&#x5F0F;&#x8BBE;&#x7F6E;&#xFF0C;&#x4F7F;&#x4E4B;&#x5BB9;&#x6613;&#x88AB;&#x7406;&#x89E3;&#x3001;&#x4F7F;&#x7528;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
 <p>&#x540C;&#x65F6;&#xFF0C;&#x5E0C;&#x671B;&#x901A;&#x8FC7;&#x8FD9;&#x6B21;&#x6807;&#x51C6;&#x5316;&#xFF0C;&#x63A8;&#x52A8;&#x521B;&#x5EFA;&#x51FA;&#x53EF;&#x7528;&#x7684;&#x6807;&#x51C6;&#x56FE;&#x8868;&#x5E93;&#xFF0C;&#x4F7F;&#x4E4B;&#x80FD;&#x66F4;&#x5FEB;&#x6377;&#x5730;&#x5E94;&#x7528;&#x5230;&#x5404;&#x4E2A;&#x9879;&#x76EE;&#x4E2D;&#x3002;</p>
-<h3 id="&#x7F16;&#x64B0;">&#x7F16;&#x64B0; <a href="#&#x7F16;&#x64B0;"> # </a></h3>
+<h3 id="t2&#x7F16;&#x64B0;">&#x7F16;&#x64B0; <a href="#t2&#x7F16;&#x64B0;"> # </a></h3>
 <p>&#x6797;&#x5FD7;&#x5CF0;&#x3001;&#x8D75;&#x5EB6;&#x3001;erik&#x3001;&#x5218;&#x9633;&#x3001;&#x6768;&#x51AC;</p>
 <p>&#x672C;&#x6587;&#x6863;&#x7531;<code>&#x767E;&#x5EA6;Flash&#x7EC4;</code>&#x4E0E;<code>&#x5546;&#x4E1A;&#x8FD0;&#x8425;&#x4F53;&#x7CFB;&#x524D;&#x7AEF;&#x6280;&#x672F;&#x7EC4;</code>&#x8054;&#x5408;&#x5BA1;&#x6821;&#x53D1;&#x5E03;&#x3002;</p>
-<h3 id="&#x8981;&#x6C42;">&#x8981;&#x6C42; <a href="#&#x8981;&#x6C42;"> # </a></h3>
+<h3 id="t3&#x8981;&#x6C42;">&#x8981;&#x6C42; <a href="#t3&#x8981;&#x6C42;"> # </a></h3>
 <p>&#x5728;&#x672C;&#x6587;&#x6863;&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x5173;&#x952E;&#x5B57;&#x4F1A;&#x4EE5;&#x4E2D;&#x6587;+&#x62EC;&#x53F7;&#x5305;&#x542B;&#x7684;&#x5173;&#x952E;&#x5B57;&#x82F1;&#x6587;&#x8868;&#x793A;&#xFF1A; <em>&#x5FC5;&#x987B;(MUST)</em> &#x3002;&#x5173;&#x952E;&#x5B57;&quot;MUST&quot;, &quot;MUST NOT&quot;, &quot;REQUIRED&quot;, &quot;SHALL&quot;, &quot;SHALL NOT&quot;, &quot;SHOULD&quot;, &quot;SHOULD NOT&quot;, &quot;RECOMMENDED&quot;, &quot;MAY&quot;, and &quot;OPTIONAL&quot;&#x88AB;&#x5B9A;&#x4E49;&#x5728;rfc2119&#x4E2D;&#x3002;</p>
-<h2 id="&#x540D;&#x8BCD;&#x89E3;&#x6790;">&#x540D;&#x8BCD;&#x89E3;&#x6790; <a href="#&#x540D;&#x8BCD;&#x89E3;&#x6790;"> # </a></h2>
-<h3 id="&#x57FA;&#x672C;&#x540D;&#x8BCD;">&#x57FA;&#x672C;&#x540D;&#x8BCD; <a href="#&#x57FA;&#x672C;&#x540D;&#x8BCD;"> # </a></h3>
+<h2 id="t4&#x540D;&#x8BCD;&#x89E3;&#x6790;">&#x540D;&#x8BCD;&#x89E3;&#x6790; <a href="#t4&#x540D;&#x8BCD;&#x89E3;&#x6790;"> # </a></h2>
+<h3 id="t5&#x57FA;&#x672C;&#x540D;&#x8BCD;">&#x57FA;&#x672C;&#x540D;&#x8BCD; <a href="#t5&#x57FA;&#x672C;&#x540D;&#x8BCD;"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -83,7 +104,7 @@
 </table>
 
 
-<h3 id="&#x56FE;&#x8868;&#x540D;&#x8BCD;">&#x56FE;&#x8868;&#x540D;&#x8BCD; <a href="#&#x56FE;&#x8868;&#x540D;&#x8BCD;"> # </a></h3>
+<h3 id="t6&#x56FE;&#x8868;&#x540D;&#x8BCD;">&#x56FE;&#x8868;&#x540D;&#x8BCD; <a href="#t6&#x56FE;&#x8868;&#x540D;&#x8BCD;"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -121,10 +142,10 @@
 </table>
 
 
-<h2 id="&#x56FE;&#x8868;&#x7C7B;&#x578B;">&#x56FE;&#x8868;&#x7C7B;&#x578B; <a href="#&#x56FE;&#x8868;&#x7C7B;&#x578B;"> # </a></h2>
+<h2 id="t7&#x56FE;&#x8868;&#x7C7B;&#x578B;">&#x56FE;&#x8868;&#x7C7B;&#x578B; <a href="#t7&#x56FE;&#x8868;&#x7C7B;&#x578B;"> # </a></h2>
 <p>&#x56FE;&#x8868;&#x5E93;&#x6807;&#x51C6;&#x5305;&#x542B;&#x5355;&#x56FE;&#x8868;&#x7C7B;&#x578B;&#x7684;&#x6807;&#x51C6;&#x56FE;&#x8868;&#x4EE5;&#x53CA;&#x591A;&#x56FE;&#x8868;&#x7C7B;&#x578B;&#x6DF7;&#x5408;&#x7684;&#x6DF7;&#x642D;&#x56FE;&#x8868;&#xFF1A;</p>
-<p><img src="./chart/charts.jpg" alt="&#x6807;&#x51C6;&#x56FE;&#x8868;&#x7C7B;&#x578B;" title="&#x6807;&#x51C6;&#x56FE;&#x8868;&#x7C7B;&#x578B;"></p>
-<h3 id="line">line <a href="#line"> # </a></h3>
+<p><img src="../img/chart/charts.jpg" alt="&#x6807;&#x51C6;&#x56FE;&#x8868;&#x7C7B;&#x578B;" title="&#x6807;&#x51C6;&#x56FE;&#x8868;&#x7C7B;&#x578B;"></p>
+<h3 id="t8line">line <a href="#t8line"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -137,16 +158,16 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/line1.jpg" alt="&#x6298;&#x7EBF;&#x56FE;"> </td>
-            <td> <img src="./chart/line2.jpg" alt="&#x5806;&#x79EF;&#x6298;&#x7EBF;&#x56FE;"> </td>
-            <td> <img src="./chart/line3.jpg" alt="&#x9762;&#x79EF;&#x56FE;"> </td>
-            <td> <img src="./chart/line4.jpg" alt="&#x5806;&#x79EF;&#x9762;&#x79EF;&#x56FE;"> </td>
+            <td> <img src="../img/chart/line1.jpg" alt="&#x6298;&#x7EBF;&#x56FE;"> </td>
+            <td> <img src="../img/chart/line2.jpg" alt="&#x5806;&#x79EF;&#x6298;&#x7EBF;&#x56FE;"> </td>
+            <td> <img src="../img/chart/line3.jpg" alt="&#x9762;&#x79EF;&#x56FE;"> </td>
+            <td> <img src="../img/chart/line4.jpg" alt="&#x5806;&#x79EF;&#x9762;&#x79EF;&#x56FE;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h3 id="bar">bar <a href="#bar"> # </a></h3>
+<h3 id="t9bar">bar <a href="#t9bar"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -159,16 +180,16 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/bar1.jpg" alt="&#x67F1;&#x5F62;&#x56FE;"> </td>
-            <td> <img src="./chart/bar2.jpg" alt="&#x5806;&#x79EF;&#x67F1;&#x5F62;&#x56FE;"> </td>
-            <td> <img src="./chart/bar3.jpg" alt="&#x6761;&#x5F62;&#x56FE;"> </td>
-            <td> <img src="./chart/bar4.jpg" alt="&#x5806;&#x79EF;&#x6761;&#x5F62;&#x56FE;"> </td>
+            <td> <img src="../img/chart/bar1.jpg" alt="&#x67F1;&#x5F62;&#x56FE;"> </td>
+            <td> <img src="../img/chart/bar2.jpg" alt="&#x5806;&#x79EF;&#x67F1;&#x5F62;&#x56FE;"> </td>
+            <td> <img src="../img/chart/bar3.jpg" alt="&#x6761;&#x5F62;&#x56FE;"> </td>
+            <td> <img src="../img/chart/bar4.jpg" alt="&#x5806;&#x79EF;&#x6761;&#x5F62;&#x56FE;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h3 id="scatter">scatter <a href="#scatter"> # </a></h3>
+<h3 id="t10scatter">scatter <a href="#t10scatter"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -179,14 +200,14 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/scatter1.jpg" alt="&#x6563;&#x70B9;&#x56FE;"> </td>
-            <td> <img src="./chart/scatter2.jpg" alt="&#x6C14;&#x6CE1;&#x56FE;"> </td>
+            <td> <img src="../img/chart/scatter1.jpg" alt="&#x6563;&#x70B9;&#x56FE;"> </td>
+            <td> <img src="../img/chart/scatter2.jpg" alt="&#x6C14;&#x6CE1;&#x56FE;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h3 id="pie">pie <a href="#pie"> # </a></h3>
+<h3 id="t11pie">pie <a href="#t11pie"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -197,14 +218,14 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/pie1.jpg" alt="&#x997C;&#x56FE;"> </td>
-            <td> <img src="./chart/pie2.jpg" alt="&#x5706;&#x73AF;&#x56FE;"> </td>
+            <td> <img src="../img/chart/pie1.jpg" alt="&#x997C;&#x56FE;"> </td>
+            <td> <img src="../img/chart/pie2.jpg" alt="&#x5706;&#x73AF;&#x56FE;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h3 id="radar">radar <a href="#radar"> # </a></h3>
+<h3 id="t12radar">radar <a href="#t12radar"> # </a></h3>
 <table>
     <thead>
         <tr>
@@ -215,14 +236,14 @@
     <tbody>
 
         <tr>
-            <td> <img src="./chart/radar1.jpg" alt="&#x96F7;&#x8FBE;&#x56FE;"> </td>
-            <td> <img src="./chart/radar2.jpg" alt="&#x586B;&#x5145;&#x96F7;&#x8FBE;&#x56FE;"> </td>
+            <td> <img src="../img/chart/radar1.jpg" alt="&#x96F7;&#x8FBE;&#x56FE;"> </td>
+            <td> <img src="../img/chart/radar2.jpg" alt="&#x586B;&#x5145;&#x96F7;&#x8FBE;&#x56FE;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h2 id="&#x521D;&#x59CB;&#x5316;">&#x521D;&#x59CB;&#x5316; <a href="#&#x521D;&#x59CB;&#x5316;"> # </a></h2>
+<h2 id="t13&#x521D;&#x59CB;&#x5316;">&#x521D;&#x59CB;&#x5316; <a href="#t13&#x521D;&#x59CB;&#x5316;"> # </a></h2>
 <p>&#x56FE;&#x8868;&#x5E93;&#x5B9E;&#x73B0; <em>&#x5FC5;&#x987B;(MUST)</em> &#x4E3A;&#x591A;&#x5B9E;&#x4F8B;&#x7684;&#xFF0C;&#x5B9E;&#x4F8B;&#x9009;&#x9879; <em>&#x5E94;&#x5F53;(SHOULD)</em> &#x5728;&#x65B0;&#x5EFA;&#x65F6;&#x4F20;&#x5165;&#xFF0C;&#x540C;&#x65F6; <em>&#x53EF;&#x9009;(OPTIONAL)</em> &#x7684;&#x5728;&#x5B9E;&#x4F8B;&#x65B0;&#x5EFA;&#x540E;&#x901A;&#x8FC7;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;setOption&#xFF08;&#x89C1;<a href="#&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</a>&#xFF09;&#x4F20;&#x5165;&#xFF0C;&#x4E24;&#x79CD;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x5F0F;&#x6700;&#x7EC8;&#x4EA7;&#x51FA;&#x6548;&#x679C; <em>&#x5FC5;&#x987B;(MUST)</em> &#x662F;&#x7B49;&#x4EF7;&#x7684;&#xFF0C;&#x5373;&#x5982;&#x4E0B;&#x4E24;&#x7EC4;&#x4EE3;&#x7801;&#x4EA7;&#x51FA;&#x6548;&#x679C;&#x76F8;&#x540C;&#x3002;</p>
 <pre><code class="lang-javascript"><span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x5B9E;&#x4F8B;&#x65F6;&#x4F20;&#x5165;&#x9009;&#x9879;</span>
 <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> echarts(option);
@@ -232,7 +253,7 @@
 myChart.setOption(option);
 </code></pre>
 <p>&#x540C;&#x65F6;&#xFF0C;&#x5728;&#x5B9E;&#x4F8B;&#x4E2D;&#x4EFB;&#x4F55;&#x4E2A;&#x6027;&#x5316;&#x9009;&#x9879; <em>&#x4E0D;&#x5F97;(MUST NOT)</em> &#x5F71;&#x54CD;&#x5176;&#x4ED6;&#x5DF2;&#x5B58;&#x5728;&#x6216;&#x672A;&#x6765;&#x751F;&#x6210;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
-<h2 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5; <a href="#&#x65B9;&#x6CD5;"> # </a></h2>
+<h2 id="t14&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5; <a href="#t14&#x65B9;&#x6CD5;"> # </a></h2>
 <table>
     <thead>
         <tr>
@@ -286,8 +307,8 @@ myChart.setOption(option);
 
 
 
-<h2 id="&#x9009;&#x9879;">&#x9009;&#x9879; <a href="#&#x9009;&#x9879;"> # </a></h2>
-<h3 id="option">option <a href="#option"> # </a></h3>
+<h2 id="t15&#x9009;&#x9879;">&#x9009;&#x9879; <a href="#t15&#x9009;&#x9879;"> # </a></h2>
+<h3 id="t16option">option <a href="#t16option"> # </a></h3>
 <p>&#x56FE;&#x8868;&#x9009;&#x9879;&#xFF0C;&#x5305;&#x542B;&#x56FE;&#x8868;&#x5B9E;&#x4F8B;&#x4EFB;&#x4F55;&#x53EF;&#x914D;&#x7F6E;&#x9009;&#x9879;</p>
 <table>
     <thead>
@@ -336,7 +357,7 @@ myChart.setOption(option);
 </table>
 
 
-<h3 id="legend">legend <a href="#legend"> # </a></h3>
+<h3 id="t17legend">legend <a href="#t17legend"> # </a></h3>
 <p>&#x56FE;&#x4F8B;&#xFF0C;&#x6BCF;&#x4E2A;&#x56FE;&#x8868;&#x6700;&#x591A;&#x4EC5;&#x6709;&#x4E00;&#x4E2A;&#x56FE;&#x4F8B;</p>
 <table>
     <thead>
@@ -423,8 +444,8 @@ myChart.setOption(option);
 </table>
 
 
-<p><img src="./chart/legend.jpg" alt="&#x56FE;&#x4F8B;"></p>
-<h4 id="legend.data">legend.data <a href="#legend.data"> # </a></h4>
+<p><img src="../img/chart/legend.jpg" alt="&#x56FE;&#x4F8B;"></p>
+<h4 id="t18legend.data">legend.data <a href="#t18legend.data"> # </a></h4>
 <p>&#x56FE;&#x4F8B;&#x5185;&#x5BB9;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;item&#xFF0C;&#x6570;&#x7EC4;&#x9879;&#x53EF;&#x4E3A;{Object}&#xFF0C;&#x53EF;&#x4EE5;&#x5B8C;&#x6574;&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x56FE;&#x4F8B;item&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
 <pre><code class="lang-javascript">[
     {
@@ -450,7 +471,7 @@ myChart.setOption(option);
 </code></pre>
 <p>&#x662F;&#x7B49;&#x4EF7;&#x7684;&#x3002;</p>
 <p>&#x5F53;&#x4E0D;&#x6307;&#x5B9A;itemRender&#x6216;itemStyle&#xFF0C;&#x540C;&#x65F6;&#x6839;&#x636E;name&#x503C;&#x7D22;&#x5F15;&#x4E0D;&#x5230;<a href="#Series">series</a>&#x4E2D;&#x6709;&#x540C;&#x540D;name&#x65F6;&#xFF0C;&#x5219;&#x4F1A;&#x4F7F;&#x7528;<a href="#Legend">legend</a>&#x4E2D;itemRender&#x6216;itemStyle&#xFF0C;&#x5982;&#x679C;&#x6B64;&#x65F6;legend.itemRender&#x6216;legend.itemStyle&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x8BE5;&#x9879;&#x56FE;&#x4F8B;item&#x5C06;&#x4E0D;&#x88AB;&#x663E;&#x793A;</p>
-<h3 id="tooltip">tooltip <a href="#tooltip"> # </a></h3>
+<h3 id="t19tooltip">tooltip <a href="#t19tooltip"> # </a></h3>
 <p>&#x63D0;&#x793A;&#x6846;,&#x9F20;&#x6807;&#x60AC;&#x6D6E;&#x4EA4;&#x4E92;&#x65F6;&#x7684;&#x4FE1;&#x606F;&#x63D0;&#x793A;</p>
 <table>
     <thead>
@@ -551,14 +572,14 @@ myChart.setOption(option);
     <tbody>
 
         <tr>
-            <td> <img src="./chart/tooltip1.jpg" alt="item&#x89E6;&#x53D1;"> </td>
-            <td> <img src="./chart/tooltip2.jpg" alt="axis&#x89E6;&#x53D1;"> </td>
+            <td> <img src="../img/chart/tooltip1.jpg" alt="item&#x89E6;&#x53D1;"> </td>
+            <td> <img src="../img/chart/tooltip2.jpg" alt="axis&#x89E6;&#x53D1;"> </td>
         </tr>
     </tbody>
 </table>
 
 
-<h3 id="grid">grid <a href="#grid"> # </a></h3>
+<h3 id="t20grid">grid <a href="#t20grid"> # </a></h3>
 <p>&#x76F4;&#x89D2;&#x5750;&#x6807;&#x7CFB;&#x5185;&#x7ED8;&#x56FE;&#x7F51;&#x683C;</p>
 <table>
     <thead>
@@ -597,16 +618,16 @@ myChart.setOption(option);
 </table>
 
 
-<p><img src="./chart/grid.jpg" alt="&#x7ED8;&#x56FE;&#x7F51;&#x683C;"> </p>
-<h3 id="xAxis">xAxis <a href="#xAxis"> # </a></h3>
+<p><img src="../img/chart/grid.jpg" alt="&#x7ED8;&#x56FE;&#x7F51;&#x683C;"> </p>
+<h3 id="t21xAxis">xAxis <a href="#t21xAxis"> # </a></h3>
 <p>&#x76F4;&#x89D2;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x6A2A;&#x8F74;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4EE3;&#x8868;&#x4E00;&#x6761;&#x6A2A;&#x8F74;&#x5750;&#x6807;&#x8F74;&#x3002;
 &#x6807;&#x51C6;&#xFF08;1.0&#xFF09;&#x4E2D;&#x89C4;&#x5B9A;&#x6700;&#x591A;&#x540C;&#x65F6;&#x5B58;&#x5728;2&#x6761;&#x6A2A;&#x8F74;&#xFF0C;&#x5355;&#x6761;&#x6A2A;&#x8F74;&#x65F6;&#x53EF;&#x6307;&#x5B9A;&#x5B89;&#x653E;&#x4E8E;<a href="#Grid">grid</a>&#x7684;&#x5E95;&#x90E8;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#x6216;&#x9876;&#x90E8;&#xFF0C;2&#x6761;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x65F6;&#x5219;&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x6761;&#x5B89;&#x653E;&#x4E8E;&#x5E95;&#x90E8;&#xFF0C;&#x7B2C;&#x4E8C;&#x5929;&#x5B89;&#x653E;&#x4E8E;&#x9876;&#x90E8;&#x3002;
 &#x5750;&#x6807;&#x8F74;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x76EE;&#x578B;&#x548C;&#x6570;&#x503C;&#x578B;&#xFF08;&#x533A;&#x522B;&#x8BE6;&#x89C1;<a href="#Axis">axis</a>&#xFF09;&#xFF0C;&#x6A2A;&#x8F74;&#x901A;&#x5E38;&#x4E3A;&#x7C7B;&#x76EE;&#x578B;&#xFF0C;&#x4F46;&#x6761;&#x5F62;&#x56FE;&#x65F6;&#x5219;&#x6A2A;&#x8F74;&#x4E3A;&#x6570;&#x503C;&#x578B;&#xFF0C;&#x6563;&#x70B9;&#x56FE;&#x65F6;&#x5219;&#x6A2A;&#x7EB5;&#x5747;&#x4E3A;&#x6570;&#x503C;&#x578B;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x6570;&#x8BE6;&#x89C1;<a href="#Axis">axis</a>&#x3002;</p>
-<h3 id="yAxis">yAxis <a href="#yAxis"> # </a></h3>
+<h3 id="t22yAxis">yAxis <a href="#t22yAxis"> # </a></h3>
 <p>&#x76F4;&#x89D2;&#x5750;&#x6807;&#x7CFB;&#x4E2D;&#x7EB5;&#x8F74;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4EE3;&#x8868;&#x4E00;&#x6761;&#x7EB5;&#x8F74;&#x5750;&#x6807;&#x8F74;&#x3002;
 &#x6807;&#x51C6;&#xFF08;1.0&#xFF09;&#x4E2D;&#x89C4;&#x5B9A;&#x6700;&#x591A;&#x540C;&#x65F6;&#x5B58;&#x5728;2&#x6761;&#x7EB5;&#x8F74;&#xFF0C;&#x5355;&#x6761;&#x7EB5;&#x8F74;&#x65F6;&#x53EF;&#x6307;&#x5B9A;&#x5B89;&#x653E;&#x4E8E;<a href="#Grid">grid</a>&#x7684;&#x5DE6;&#x4FA7;&#xFF08;&#x9ED8;&#x8BA4;&#xFF09;&#x6216;&#x53F3;&#x4FA7;&#xFF0C;2&#x6761;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x65F6;&#x5219;&#x9ED8;&#x8BA4;&#x7B2C;&#x4E00;&#x6761;&#x5B89;&#x653E;&#x4E8E;&#x5DE6;&#x4FA7;&#xFF0C;&#x7B2C;&#x4E8C;&#x5929;&#x5B89;&#x653E;&#x4E8E;&#x53F3;&#x4FA7;&#x3002;
 &#x5750;&#x6807;&#x8F74;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x76EE;&#x578B;&#x548C;&#x6570;&#x503C;&#x578B;&#xFF08;&#x533A;&#x522B;&#x8BE6;&#x89C1;<a href="#Axis">axis</a>&#xFF09;&#xFF0C;&#x7EB5;&#x8F74;&#x901A;&#x5E38;&#x4E3A;&#x6570;&#x503C;&#x578B;&#xFF0C;&#x4F46;&#x6761;&#x5F62;&#x56FE;&#x65F6;&#x5219;&#x7EB5;&#x8F74;&#x4E3A;&#x7C7B;&#x76EE;&#x578B;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x6570;&#x8BE6;&#x89C1;<a href="#Axis">axis</a>&#x3002;</p>
-<h3 id="axis">axis <a href="#axis"> # </a></h3>
+<h3 id="t23axis">axis <a href="#t23axis"> # </a></h3>
 <p>&#x5750;&#x6807;&#x8F74;&#x6709;&#x4E24;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x7C7B;&#x76EE;&#x578B;&#x548C;&#x6570;&#x503C;&#x578B;&#xFF0C;&#x4ED6;&#x4EEC;&#x7684;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF1A;</p>
 <ul>
 <li>&#x7C7B;&#x76EE;&#x578B;&#xFF1A;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x7C7B;&#x76EE;&#x5217;&#x8868;&#xFF0C;&#x5750;&#x6807;&#x8F74;&#x5185;&#x6709;&#x4E14;&#x4EC5;&#x6709;&#x8FD9;&#x4E9B;&#x6307;&#x5B9A;&#x7C7B;&#x76EE;&#x5750;&#x6807;</li>
@@ -744,20 +765,20 @@ myChart.setOption(option);
 
         <tr>
             <td> boundaryGap: true </td>
-            <td> <img src="./chart/axisBoundaryGap1.jpg" alt="axisBoundaryGap1"> </td>
+            <td> <img src="../img/chart/axisBoundaryGap1.jpg" alt="axisBoundaryGap1"> </td>
         </tr>
 
         <tr>
             <td> boundaryGap: false </td>
-            <td><img src="./chart/axisBoundaryGap.png" alt="axisBoundaryGap"> </td>
+            <td><img src="../img/chart/axisBoundaryGap.png" alt="axisBoundaryGap"> </td>
         </tr>
     </tbody>
 </table>
 
 
 <p>axis&#x5C5E;&#x6027;&#x8BF4;&#x660E;</p>
-<p><img src="./chart/axisDetail.jpg" alt="axisDetail"></p>
-<h4 id="axis.axisLabel">axis.axisLabel <a href="#axis.axisLabel"> # </a></h4>
+<p><img src="../img/chart/axisDetail.jpg" alt="axisDetail"></p>
+<h4 id="t24axis.axisLabel">axis.axisLabel <a href="#t24axis.axisLabel"> # </a></h4>
 <p>&#x5750;&#x6807;&#x8F74;&#x6587;&#x672C;&#x6807;&#x7B7E;&#x9009;&#x9879;</p>
 <table>
     <thead>
@@ -826,7 +847,7 @@ myChart.setOption(option);
 </ul>
 </li>
 </ul>
-<h4 id="axis.data">axis.data <a href="#axis.data"> # </a></h4>
+<h4 id="t25axis.data">axis.data <a href="#t25axis.data"> # </a></h4>
 <p>&#x7C7B;&#x76EE;&#x578B;&#x5750;&#x6807;&#x8F74;&#x6587;&#x672C;&#x6807;&#x7B7E;&#x6570;&#x7EC4;&#xFF0C;&#x6307;&#x5B9A;label&#x5185;&#x5BB9;&#x3002;
 &#x6570;&#x7EC4;&#x9879;&#x901A;&#x5E38;&#x4E3A;&#x6587;&#x672C;&#xFF0C;&#x5982;: </p>
 <pre><code class="lang-javascript">[<span class="hljs-string">&apos;Jan&apos;</span>, <span class="hljs-string">&apos;Feb&apos;</span>, <span class="hljs-string">&apos;Mar&apos;</span>, <span class="hljs-string">&apos;Apr&apos;</span>, <span class="hljs-string">&apos;May&apos;</span>, <span class="hljs-string">&apos;Jun&apos;</span>, ..., <span class="hljs-string">&apos;Dec&apos;</span>]
@@ -844,7 +865,7 @@ myChart.setOption(option);
     <span class="hljs-string">&apos;May&apos;</span>, <span class="hljs-string">&apos;...&apos;</span>
 ]
 </code></pre>
-<h3 id="series">series <a href="#series"> # </a></h3>
+<h3 id="t26series">series <a href="#t26series"> # </a></h3>
 <p>&#x9A71;&#x52A8;&#x56FE;&#x8868;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#xFF0C;&#x6570;&#x7EC4;&#x4E2D;&#x6BCF;&#x4E00;&#x9879;&#x4EE3;&#x8868;&#x4E00;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x7279;&#x6B8A;&#x9009;&#x9879;&#x53CA;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4E2D;&#x4E2A;&#x522B;&#x9009;&#x9879;&#x4EC5;&#x5728;&#x90E8;&#x5206;&#x56FE;&#x8868;&#x7C7B;&#x578B;&#x4E2D;&#x6709;&#x6548;&#xFF0C;&#x8BF7;&#x6CE8;&#x610F;&#x9002;&#x7528;&#x7C7B;&#x578B;&#xFF1A;</p>
 <table>
     <thead>
@@ -965,7 +986,7 @@ myChart.setOption(option);
 </table>
 
 
-<h4 id="series.data">series.data <a href="#series.data"> # </a></h4>
+<h4 id="t27series.data">series.data <a href="#t27series.data"> # </a></h4>
 <p>&#x7CFB;&#x5217;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x6570;&#x7EC4;&#xFF0C;&#x6298;&#x7EBF;&#x56FE;&#x4EE5;&#x53CA;&#x67F1;&#x72B6;&#x56FE;&#x4E2D;&#x5F53;&#x524D;&#x6570;&#x7EC4;&#x957F;&#x5EA6; <em>&#x5FC5;&#x987B;(MUST)</em> &#x7B49;&#x4E8E;&#x6240;&#x4F7F;&#x7528;&#x7C7B;&#x76EE;&#x8F74;&#x6587;&#x672C;&#x6807;&#x7B7E;&#x6570;&#x7EC4;<a href="#AxisData">axis.data</a>&#x7684;&#x957F;&#x5EA6;&#xFF0C;&#x5E76;&#x4E14;&#x4ED6;&#x4EEC;&#x95F4;&#x662F;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x7684;&#xFF0C;&#x3002;
 &#x6570;&#x7EC4;&#x9879;&#x901A;&#x5E38;&#x4E3A;&#x6570;&#x503C;&#xFF0C;&#x5982;: </p>
 <pre><code class="lang-javascript">[<span class="hljs-number">12</span>, <span class="hljs-number">34</span>, <span class="hljs-number">56</span>, ..., <span class="hljs-number">10</span>, <span class="hljs-number">23</span>]
@@ -1015,7 +1036,7 @@ myChart.setOption(option);
     }
 ]
 </code></pre>
-<h3 id="itemStyle">itemStyle <a href="#itemStyle"> # </a></h3>
+<h3 id="t28itemStyle">itemStyle <a href="#t28itemStyle"> # </a></h3>
 <p>&#x56FE;&#x5F62;&#x6837;&#x5F0F;&#xFF0C;&#x53EF;&#x8BBE;&#x7F6E;&#x56FE;&#x8868;&#x5185;&#x56FE;&#x5F62;&#x7684;&#x9ED8;&#x8BA4;&#x6837;&#x5F0F;&#x548C;&#x5F3A;&#x8C03;&#x6837;&#x5F0F;&#xFF08;&#x60AC;&#x6D6E;&#x60AC;&#x6D6E;&#x65F6;&#x6837;&#x5F0F;&#xFF09;&#xFF1A;</p>
 <pre><code>itemStyle: { 
     normal: {
@@ -1163,7 +1184,7 @@ myChart.setOption(option);
     } 
 }
 </code></pre>
-<h3 id="lineStyle">lineStyle <a href="#lineStyle"> # </a></h3>
+<h3 id="t29lineStyle">lineStyle <a href="#t29lineStyle"> # </a></h3>
 <p>&#x7EBF;&#x6761;&#xFF08;&#x7EBF;&#x6BB5;&#xFF09;&#x6837;&#x5F0F;</p>
 <table>
     <thead>
@@ -1192,7 +1213,7 @@ myChart.setOption(option);
 </table>
 
 
-<h3 id="areaStyle">areaStyle <a href="#areaStyle"> # </a></h3>
+<h3 id="t30areaStyle">areaStyle <a href="#t30areaStyle"> # </a></h3>
 <p>&#x533A;&#x57DF;&#x586B;&#x5145;&#x6837;&#x5F0F;</p>
 <table>
     <thead>
@@ -1216,7 +1237,7 @@ myChart.setOption(option);
 </table>
 
 
-<h3 id="textStyle">textStyle <a href="#textStyle"> # </a></h3>
+<h3 id="t31textStyle">textStyle <a href="#t31textStyle"> # </a></h3>
 <p>&#x6587;&#x5B57;&#x6837;&#x5F0F;</p>
 <table>
     <thead>
@@ -1265,7 +1286,7 @@ myChart.setOption(option);
 </table>
 
 
-<h3 id="loadingOption">loadingOption <a href="#loadingOption"> # </a></h3>
+<h3 id="t32loadingOption">loadingOption <a href="#t32loadingOption"> # </a></h3>
 <p>&#x8FC7;&#x6E21;&#x663E;&#x793A;&#xFF0C;loading&#xFF08;&#x8BFB;&#x53D6;&#x4E2D;&#xFF09;&#x7684;&#x9009;&#x9879;</p>
 <table>
     <thead>
@@ -1304,15 +1325,15 @@ myChart.setOption(option);
 </table>
 
 
-<h3 id="&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1;">&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1; <a href="#&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1;"> # </a></h3>
+<h3 id="t33&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1;">&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1; <a href="#t33&#x591A;&#x7EA7;&#x63A7;&#x5236;&#x8BBE;&#x8BA1;"> # </a></h3>
 <p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E09;&#x7EA7;&#x6EE1;&#x8DB3;&#x4E0D;&#x540C;level&#x7684;&#x5B9A;&#x5236;&#x548C;&#x4E2A;&#x6027;&#x5316;&#x9700;&#x6C42;&#xFF1A;</p>
 <ul>
 <li>&#x901A;&#x8FC7; option.* &#x8BBE;&#x7F6E;&#x5168;&#x5C40;&#x7EDF;&#x4E00;&#x914D;&#x7F6E;&#xFF1B;</li>
 <li>&#x901A;&#x8FC7; option.series.* &#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x7CFB;&#x5217;&#x7279;&#x6B8A;&#x914D;&#x7F6E;&#xFF0C;&#x5176;&#x4F18;&#x5148;&#x7EA7;&#x9AD8;&#x4E8E; option &#x5185;&#x7684;&#x540C;&#x540D;&#x914D;&#x7F6E;&#xFF1B;</li>
 <li>&#x901A;&#x8FC7; option.series.data.* &#x8BBE;&#x7F6E;&#x7279;&#x5B9A;&#x6570;&#x636E;&#x9879;&#x7684;&#x7279;&#x6B8A;&#x914D;&#x7F6E;&#xFF0C;&#x6700;&#x9AD8;&#x4F18;&#x5148;&#x7EA7;&#xFF1B;</li>
 </ul>
-<p><img src="./chart/multiControl.jpg" alt="&#x591A;&#x7EA7;&#x63A7;&#x5236;"></p>
-<h2 id="&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B;">&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B; <a href="#&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B;"> # </a></h2>
+<p><img src="../img/chart/multiControl.jpg" alt="&#x591A;&#x7EA7;&#x63A7;&#x5236;"></p>
+<h2 id="t34&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B;">&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B; <a href="#t34&#x9644;&#x5F55;&#xFF1A;&#x4E00;&#x4E2A;&#x76F4;&#x89C2;&#x7684;&#x4E8B;&#x4F8B;"> # </a></h2>
 <pre><code class="lang-javascript"><span class="hljs-comment">// &#x56FE;&#x8868;&#x5B9E;&#x4F8B;&#x5316;------------------</span>
 <span class="hljs-keyword">var</span> myChart = <span class="hljs-keyword">new</span> echarts();
 
@@ -1392,7 +1413,7 @@ myChart.dispose();
 
         <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
     </div>
-    
+
 </div>
 
 

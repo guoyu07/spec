@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>spec</title>
+        
+    <link rel="stylesheet" type="text/css" href="../static/css/main.css">
+</head>
+<body>
+<div class="navbar navbar-line">
+    <div class="container">
+        <div class="logo">
+            
+                spec
+            
+        </div>
+        <input type="checkbox" id="idoc_nav" />
+        <div class="menu_tree">
+        <ul><li><a href="../index.html">README</a></li><li><a href="../html/chart.html">chart</a></li><li><a href="../html/directory.html">directory</a></li><li><a href="../html/e-json.html">e-json</a></li><li><a href="../html/module.html">module</a></li><li><a href="../html/package.html">package</a></li><li><a href="../html/css.html">css</a></li><li><a href="../html/es-next.html">es-next</a></li><li class="active"><a href="../html/html.html">html</a></li><li><a href="../html/javascript.html">javascript</a></li><li><a href="../html/less-code.html">less-code</a></li></ul>    
+        </div>
+        
+        
+        <div class="forkgithub"><a target="_blank" href="https://github.com/jaywcjlove/spec">fork on github</a></div>
+        
+
+        <section class="idoc_nav_btn">
+            <label for="idoc_nav"><span></span></label>
+        </section>
+    </div>
+    
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="page-toc">
+        <ul><li><a href="#t0HTML编码规范">HTML编码规范</a><ul><li><a href="#t11 前言">1 前言</a></li><li><a href="#t22 代码风格">2 代码风格</a><ul><li><a href="#t32.1 缩进与换行">2.1 缩进与换行</a><ul><li><a href="#t4[强制] 使用 4 个空格做为一个缩进层级，不允许使用 2 个空格 或 tab 字符。">[强制] 使用 4 个空格做为一个缩进层级，不允许使用 2 个空格 或 tab 字符。</a></li><li><a href="#t5[建议] 每行不得超过 120 个字符。">[建议] 每行不得超过 120 个字符。</a></li></ul></li><li><a href="#t62.2 命名">2.2 命名</a><ul><li><a href="#t7[强制] class 必须单词全字母小写，单词间以 - 分隔。">[强制] class 必须单词全字母小写，单词间以 - 分隔。</a></li><li><a href="#t8[强制] class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。">[强制] class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。</a></li><li><a href="#t9[强制] 元素 id 必须保证页面唯一。">[强制] 元素 id 必须保证页面唯一。</a></li><li><a href="#t10[建议] id 建议单词全字母小写，单词间以 - 分隔。同项目必须保持风格一致。">[建议] id 建议单词全字母小写，单词间以 - 分隔。同项目必须保持风格一致。</a></li><li><a href="#t11[建议] id、class 命名，在避免冲突并描述清楚的前提下尽可能短。">[建议] id、class 命名，在避免冲突并描述清楚的前提下尽可能短。</a></li><li><a href="#t12[强制] 禁止为了 hook 脚本，创建无样式信息的 class。">[强制] 禁止为了 hook 脚本，创建无样式信息的 class。</a></li><li><a href="#t13[强制] 同一页面，应避免使用相同的 name 与 id。">[强制] 同一页面，应避免使用相同的 name 与 id。</a></li></ul></li><li><a href="#t142.3 标签">2.3 标签</a><ul><li><a href="#t15[强制] 标签名必须使用小写字母。">[强制] 标签名必须使用小写字母。</a></li><li><a href="#t16[强制] 对于无需自闭合的标签，不允许自闭合。">[强制] 对于无需自闭合的标签，不允许自闭合。</a></li><li><a href="#t17[强制] 对 HTML5 中规定允许省略的闭合标签，不允许省略闭合标签。">[强制] 对 HTML5 中规定允许省略的闭合标签，不允许省略闭合标签。</a></li><li><a href="#t18[强制] 标签使用必须符合标签嵌套规则。">[强制] 标签使用必须符合标签嵌套规则。</a></li><li><a href="#t19[建议] HTML 标签的使用应该遵循标签的语义。">[建议] HTML 标签的使用应该遵循标签的语义。</a></li><li><a href="#t20[建议] 在 CSS 可以实现相同需求的情况下不得使用表格进行布局。">[建议] 在 CSS 可以实现相同需求的情况下不得使用表格进行布局。</a></li><li><a href="#t21[建议] 标签的使用应尽量简洁，减少不必要的标签。">[建议] 标签的使用应尽量简洁，减少不必要的标签。</a></li></ul></li><li><a href="#t222.4 属性">2.4 属性</a><ul><li><a href="#t23[强制] 属性名必须使用小写字母。">[强制] 属性名必须使用小写字母。</a></li><li><a href="#t24[强制] 属性值必须用双引号包围。">[强制] 属性值必须用双引号包围。</a></li><li><a href="#t25[建议] 布尔类型的属性，建议不添加属性值。">[建议] 布尔类型的属性，建议不添加属性值。</a></li><li><a href="#t26[建议] 自定义属性建议以 xxx- 为前缀，推荐使用 data-。">[建议] 自定义属性建议以 xxx- 为前缀，推荐使用 data-。</a></li></ul></li></ul></li><li><a href="#t273 通用">3 通用</a><ul><li><a href="#t283.1 DOCTYPE">3.1 DOCTYPE</a><ul><li><a href="#t29[强制] 使用 HTML5 的 doctype 来启用标准模式，建议使用大写的 DOCTYPE。">[强制] 使用 HTML5 的 doctype 来启用标准模式，建议使用大写的 DOCTYPE。</a></li><li><a href="#t30[建议] 启用 IE Edge 模式。">[建议] 启用 IE Edge 模式。</a></li><li><a href="#t31[建议] 在 html 标签上设置正确的 lang 属性。">[建议] 在 html 标签上设置正确的 lang 属性。</a></li></ul></li><li><a href="#t323.2 编码">3.2 编码</a><ul><li><a href="#t33[强制] 页面必须使用精简形式，明确指定字符编码。指定字符编码的 meta 必须是 head 的第一个直接子元素。">[强制] 页面必须使用精简形式，明确指定字符编码。指定字符编码的 meta 必须是 head 的第一个直接子元素。</a></li><li><a href="#t34[建议] HTML 文件使用无 BOM 的 UTF-8 编码。">[建议] HTML 文件使用无 BOM 的 UTF-8 编码。</a></li></ul></li><li><a href="#t353.3 CSS 和 JavaScript 引入">3.3 CSS 和 JavaScript 引入</a><ul><li><a href="#t36[强制] 引入 CSS 时必须指明 rel="stylesheet"。">[强制] 引入 CSS 时必须指明 rel="stylesheet"。</a></li><li><a href="#t37[建议] 引入 CSS 和 JavaScript 时无须指明 type 属性。">[建议] 引入 CSS 和 JavaScript 时无须指明 type 属性。</a></li><li><a href="#t38[建议] 展现定义放置于外部 CSS 中，行为定义放置于外部 JavaScript 中。">[建议] 展现定义放置于外部 CSS 中，行为定义放置于外部 JavaScript 中。</a></li><li><a href="#t39[建议] 在 head 中引入页面需要的所有 CSS 资源。">[建议] 在 head 中引入页面需要的所有 CSS 资源。</a></li><li><a href="#t40[建议] JavaScript 应当放在页面末尾，或采用异步加载。">[建议] JavaScript 应当放在页面末尾，或采用异步加载。</a></li><li><a href="#t41[建议] 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀。">[建议] 移动环境或只针对现代浏览器设计的 Web 应用，如果引用外部资源的 URL 协议部分与页面相同，建议省略协议前缀。</a></li></ul></li></ul></li><li><a href="#t424 head">4 head</a><ul><li><a href="#t434.1 title">4.1 title</a><ul><li><a href="#t44[强制] 页面必须包含 title 标签声明标题。">[强制] 页面必须包含 title 标签声明标题。</a></li><li><a href="#t45[强制] title 必须作为 head 的直接子元素，并紧随 charset 声明之后。">[强制] title 必须作为 head 的直接子元素，并紧随 charset 声明之后。</a></li></ul></li><li><a href="#t464.2 favicon">4.2 favicon</a><ul><li><a href="#t47[强制] 保证 favicon 可访问。">[强制] 保证 favicon 可访问。</a></li></ul></li><li><a href="#t484.3 viewport">4.3 viewport</a><ul><li><a href="#t49[建议] 若页面欲对移动设备友好，需指定页面的 viewport。">[建议] 若页面欲对移动设备友好，需指定页面的 viewport。</a></li></ul></li></ul></li><li><a href="#t505 图片">5 图片</a><ul><li><a href="#t51[强制] 禁止 img 的 src 取值为空。延迟加载的图片也要增加默认的 src。">[强制] 禁止 img 的 src 取值为空。延迟加载的图片也要增加默认的 src。</a></li><li><a href="#t52[建议] 避免为 img 添加不必要的 title 属性。">[建议] 避免为 img 添加不必要的 title 属性。</a></li><li><a href="#t53[建议] 为重要图片添加 alt 属性。">[建议] 为重要图片添加 alt 属性。</a></li><li><a href="#t54[建议] 添加 width 和 height 属性，以避免页面抖动。">[建议] 添加 width 和 height 属性，以避免页面抖动。</a></li><li><a href="#t55[建议] 有下载需求的图片采用 img 标签实现，无下载需求的图片采用 CSS 背景图实现。">[建议] 有下载需求的图片采用 img 标签实现，无下载需求的图片采用 CSS 背景图实现。</a></li></ul></li><li><a href="#t566 表单">6 表单</a><ul><li><a href="#t576.1 控件标题">6.1 控件标题</a><ul><li><a href="#t58[强制] 有文本标题的控件必须使用 label 标签将其与其标题相关联。">[强制] 有文本标题的控件必须使用 label 标签将其与其标题相关联。</a></li></ul></li><li><a href="#t596.2 按钮">6.2 按钮</a><ul><li><a href="#t60[强制] 使用 button 元素时必须指明 type 属性值。">[强制] 使用 button 元素时必须指明 type 属性值。</a></li><li><a href="#t61[建议] 尽量不要使用按钮类元素的 name 属性。">[建议] 尽量不要使用按钮类元素的 name 属性。</a></li></ul></li><li><a href="#t626.3 可访问性 (A11Y)">6.3 可访问性 (A11Y)</a><ul><li><a href="#t63[建议] 负责主要功能的按钮在 DOM 中的顺序应靠前。">[建议] 负责主要功能的按钮在 DOM 中的顺序应靠前。</a></li><li><a href="#t64[建议] 当使用 JavaScript 进行表单提交时，如果条件允许，应使原生提交功能正常工作。">[建议] 当使用 JavaScript 进行表单提交时，如果条件允许，应使原生提交功能正常工作。</a></li><li><a href="#t65[建议] 在针对移动设备开发的页面时，根据内容类型指定输入框的 type 属性。">[建议] 在针对移动设备开发的页面时，根据内容类型指定输入框的 type 属性。</a></li></ul></li></ul></li><li><a href="#t667 多媒体">7 多媒体</a><ul><li><a href="#t67[建议] 当在现代浏览器中使用 audio 以及 video 标签来播放音频、视频时，应当注意格式。">[建议] 当在现代浏览器中使用 audio 以及 video 标签来播放音频、视频时，应当注意格式。</a></li><li><a href="#t68[建议] 在支持 HTML5 的浏览器中优先使用 audio 和 video 标签来定义音视频元素。">[建议] 在支持 HTML5 的浏览器中优先使用 audio 和 video 标签来定义音视频元素。</a></li><li><a href="#t69[建议] 使用退化到插件的方式来对多浏览器进行支持。">[建议] 使用退化到插件的方式来对多浏览器进行支持。</a></li><li><a href="#t70[建议] 只在必要的时候开启音视频的自动播放。">[建议] 只在必要的时候开启音视频的自动播放。</a></li><li><a href="#t71[建议] 在 object 标签内部提供指示浏览器不支持该标签的说明。">[建议] 在 object 标签内部提供指示浏览器不支持该标签的说明。</a></li></ul></li><li><a href="#t728 模板中的 HTML">8 模板中的 HTML</a><ul><li><a href="#t73[建议] 模板代码的缩进优先保证 HTML 代码的缩进规则。">[建议] 模板代码的缩进优先保证 HTML 代码的缩进规则。</a></li><li><a href="#t74[建议] 模板代码应以保证 HTML 单个标签语法的正确性为基本原则。">[建议] 模板代码应以保证 HTML 单个标签语法的正确性为基本原则。</a></li><li><a href="#t75[建议] 在循环处理模板数据构造表格时，若要求每行输出固定的个数，建议先将数据分组，之后再循环输出。">[建议] 在循环处理模板数据构造表格时，若要求每行输出固定的个数，建议先将数据分组，之后再循环输出。</a></li></ul></li></ul></li></ul>
+    </div>
+    
+    <div class="content markdown-body">
+        <h1 id="t0HTML&#x7F16;&#x7801;&#x89C4;&#x8303;">HTML&#x7F16;&#x7801;&#x89C4;&#x8303; <a href="#t0HTML&#x7F16;&#x7801;&#x89C4;&#x8303;"> # </a></h1>
+<p><a href="#user-content-1-%E5%89%8D%E8%A8%80">1 &#x524D;&#x8A00;</a></p>
+<p><a href="#user-content-2-%E4%BB%A3%E7%A0%81%E9%A3%8E%E6%A0%BC">2 &#x4EE3;&#x7801;&#x98CE;&#x683C;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-21-%E7%BC%A9%E8%BF%9B%E4%B8%8E%E6%8D%A2%E8%A1%8C">2.1 &#x7F29;&#x8FDB;&#x4E0E;&#x6362;&#x884C;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-22-%E5%91%BD%E5%90%8D">2.2 &#x547D;&#x540D;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-23-%E6%A0%87%E7%AD%BE">2.3 &#x6807;&#x7B7E;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-24-%E5%B1%9E%E6%80%A7">2.4 &#x5C5E;&#x6027;</a></p>
+<p><a href="#user-content-3-%E9%80%9A%E7%94%A8">3 &#x901A;&#x7528;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-31-doctype">3.1 DOCTYPE</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-32-%E7%BC%96%E7%A0%81">3.2 &#x7F16;&#x7801;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-33-css-%E5%92%8C-javascript-%E5%BC%95%E5%85%A5">3.3 CSS &#x548C; JavaScript &#x5F15;&#x5165;</a></p>
+<p><a href="#user-content-4-head">4 head</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-41-title">4.1 title</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-42-favicon">4.2 favicon</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-43-viewport">4.3 viewport</a></p>
+<p><a href="#user-content-5-%E5%9B%BE%E7%89%87">5 &#x56FE;&#x7247;</a></p>
+<p><a href="#user-content-6-%E8%A1%A8%E5%8D%95">6 &#x8868;&#x5355;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-61-%E6%8E%A7%E4%BB%B6%E6%A0%87%E9%A2%98">6.1 &#x63A7;&#x4EF6;&#x6807;&#x9898;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-62-%E6%8C%89%E9%92%AE">6.2 &#x6309;&#x94AE;</a></p>
+<p>&#x3000;&#x3000;<a href="#user-content-63-%E5%8F%AF%E8%AE%BF%E9%97%AE%E6%80%A7-a11y">6.3 &#x53EF;&#x8BBF;&#x95EE;&#x6027; (A11Y)</a></p>
+<p><a href="#user-content-7-%E5%A4%9A%E5%AA%92%E4%BD%93">7 &#x591A;&#x5A92;&#x4F53;</a></p>
+<p><a href="#user-content-8-%E6%A8%A1%E6%9D%BF%E4%B8%AD%E7%9A%84-html">8 &#x6A21;&#x677F;&#x4E2D;&#x7684; HTML</a></p>
+<h2 id="t11 &#x524D;&#x8A00;">1 &#x524D;&#x8A00; <a href="#t11 &#x524D;&#x8A00;"> # </a></h2>
+<p>HTML &#x4F5C;&#x4E3A;&#x63CF;&#x8FF0;&#x7F51;&#x9875;&#x7ED3;&#x6784;&#x7684;&#x8D85;&#x6587;&#x672C;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#xFF0C;&#x5728;&#x767E;&#x5EA6;&#x4E00;&#x76F4;&#x6709;&#x7740;&#x5E7F;&#x6CDB;&#x7684;&#x5E94;&#x7528;&#x3002;&#x672C;&#x6587;&#x6863;&#x7684;&#x76EE;&#x6807;&#x662F;&#x4F7F; HTML &#x4EE3;&#x7801;&#x98CE;&#x683C;&#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x5BB9;&#x6613;&#x88AB;&#x7406;&#x89E3;&#x548C;&#x88AB;&#x7EF4;&#x62A4;&#x3002;</p>
+<h2 id="t22 &#x4EE3;&#x7801;&#x98CE;&#x683C;">2 &#x4EE3;&#x7801;&#x98CE;&#x683C; <a href="#t22 &#x4EE3;&#x7801;&#x98CE;&#x683C;"> # </a></h2>
+<h3 id="t32.1 &#x7F29;&#x8FDB;&#x4E0E;&#x6362;&#x884C;">2.1 &#x7F29;&#x8FDB;&#x4E0E;&#x6362;&#x884C; <a href="#t32.1 &#x7F29;&#x8FDB;&#x4E0E;&#x6362;&#x884C;"> # </a></h3>
+<h4 id="t4[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; 4 &#x4E2A;&#x7A7A;&#x683C;&#x505A;&#x4E3A;&#x4E00;&#x4E2A;&#x7F29;&#x8FDB;&#x5C42;&#x7EA7;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528; 2 &#x4E2A;&#x7A7A;&#x683C; &#x6216; tab &#x5B57;&#x7B26;&#x3002;">[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; 4 &#x4E2A;&#x7A7A;&#x683C;&#x505A;&#x4E3A;&#x4E00;&#x4E2A;&#x7F29;&#x8FDB;&#x5C42;&#x7EA7;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528; 2 &#x4E2A;&#x7A7A;&#x683C; &#x6216; tab &#x5B57;&#x7B26;&#x3002; <a href="#t4[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; 4 &#x4E2A;&#x7A7A;&#x683C;&#x505A;&#x4E3A;&#x4E00;&#x4E2A;&#x7F29;&#x8FDB;&#x5C42;&#x7EA7;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528; 2 &#x4E2A;&#x7A7A;&#x683C; &#x6216; tab &#x5B57;&#x7B26;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>second<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<h4 id="t5[&#x5EFA;&#x8BAE;] &#x6BCF;&#x884C;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 120 &#x4E2A;&#x5B57;&#x7B26;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6BCF;&#x884C;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 120 &#x4E2A;&#x5B57;&#x7B26;&#x3002; <a href="#t5[&#x5EFA;&#x8BAE;] &#x6BCF;&#x884C;&#x4E0D;&#x5F97;&#x8D85;&#x8FC7; 120 &#x4E2A;&#x5B57;&#x7B26;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x8FC7;&#x957F;&#x7684;&#x4EE3;&#x7801;&#x4E0D;&#x5BB9;&#x6613;&#x9605;&#x8BFB;&#x4E0E;&#x7EF4;&#x62A4;&#x3002;&#x4F46;&#x662F;&#x8003;&#x8651;&#x5230; HTML &#x7684;&#x7279;&#x6B8A;&#x6027;&#xFF0C;&#x4E0D;&#x505A;&#x786C;&#x6027;&#x8981;&#x6C42;&#x3002;</p>
+<h3 id="t62.2 &#x547D;&#x540D;">2.2 &#x547D;&#x540D; <a href="#t62.2 &#x547D;&#x540D;"> # </a></h3>
+<h4 id="t7[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002;">[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002; <a href="#t7[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002;"> # </a></h4>
+<h4 id="t8[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x4EE3;&#x8868;&#x76F8;&#x5E94;&#x6A21;&#x5757;&#x6216;&#x90E8;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x6216;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x5F97;&#x4EE5;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x547D;&#x540D;&#x3002;">[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x4EE3;&#x8868;&#x76F8;&#x5E94;&#x6A21;&#x5757;&#x6216;&#x90E8;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x6216;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x5F97;&#x4EE5;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x547D;&#x540D;&#x3002; <a href="#t8[&#x5F3A;&#x5236;] class &#x5FC5;&#x987B;&#x4EE3;&#x8868;&#x76F8;&#x5E94;&#x6A21;&#x5757;&#x6216;&#x90E8;&#x4EF6;&#x7684;&#x5185;&#x5BB9;&#x6216;&#x529F;&#x80FD;&#xFF0C;&#x4E0D;&#x5F97;&#x4EE5;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x8FDB;&#x884C;&#x547D;&#x540D;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;sidebar&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;left&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="t9[&#x5F3A;&#x5236;] &#x5143;&#x7D20; id &#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x9875;&#x9762;&#x552F;&#x4E00;&#x3002;">[&#x5F3A;&#x5236;] &#x5143;&#x7D20; id &#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x9875;&#x9762;&#x552F;&#x4E00;&#x3002; <a href="#t9[&#x5F3A;&#x5236;] &#x5143;&#x7D20; id &#x5FC5;&#x987B;&#x4FDD;&#x8BC1;&#x9875;&#x9762;&#x552F;&#x4E00;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x540C;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x4E2D;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x5143;&#x7D20;&#x5305;&#x542B;&#x76F8;&#x540C;&#x7684; <code>id</code>&#xFF0C;&#x4E0D;&#x7B26;&#x5408; <code>id</code> &#x7684;&#x5C5E;&#x6027;&#x542B;&#x4E49;&#x3002;&#x5E76;&#x4E14;&#x4F7F;&#x7528; <code>document.getElementById</code> &#x65F6;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x96BE;&#x4EE5;&#x8FFD;&#x67E5;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h4 id="t10[&#x5EFA;&#x8BAE;] id &#x5EFA;&#x8BAE;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002;&#x540C;&#x9879;&#x76EE;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x98CE;&#x683C;&#x4E00;&#x81F4;&#x3002;">[&#x5EFA;&#x8BAE;] id &#x5EFA;&#x8BAE;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002;&#x540C;&#x9879;&#x76EE;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x98CE;&#x683C;&#x4E00;&#x81F4;&#x3002; <a href="#t10[&#x5EFA;&#x8BAE;] id &#x5EFA;&#x8BAE;&#x5355;&#x8BCD;&#x5168;&#x5B57;&#x6BCD;&#x5C0F;&#x5199;&#xFF0C;&#x5355;&#x8BCD;&#x95F4;&#x4EE5; - &#x5206;&#x9694;&#x3002;&#x540C;&#x9879;&#x76EE;&#x5FC5;&#x987B;&#x4FDD;&#x6301;&#x98CE;&#x683C;&#x4E00;&#x81F4;&#x3002;"> # </a></h4>
+<h4 id="t11[&#x5EFA;&#x8BAE;] id&#x3001;class &#x547D;&#x540D;&#xFF0C;&#x5728;&#x907F;&#x514D;&#x51B2;&#x7A81;&#x5E76;&#x63CF;&#x8FF0;&#x6E05;&#x695A;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x5C3D;&#x53EF;&#x80FD;&#x77ED;&#x3002;">[&#x5EFA;&#x8BAE;] id&#x3001;class &#x547D;&#x540D;&#xFF0C;&#x5728;&#x907F;&#x514D;&#x51B2;&#x7A81;&#x5E76;&#x63CF;&#x8FF0;&#x6E05;&#x695A;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x5C3D;&#x53EF;&#x80FD;&#x77ED;&#x3002; <a href="#t11[&#x5EFA;&#x8BAE;] id&#x3001;class &#x547D;&#x540D;&#xFF0C;&#x5728;&#x907F;&#x514D;&#x51B2;&#x7A81;&#x5E76;&#x63CF;&#x8FF0;&#x6E05;&#x695A;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#x5C3D;&#x53EF;&#x80FD;&#x77ED;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;nav&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;navigation&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;comment&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;com&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;author&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;red&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+</code></pre>
+<h4 id="t12[&#x5F3A;&#x5236;] &#x7981;&#x6B62;&#x4E3A;&#x4E86; hook &#x811A;&#x672C;&#xFF0C;&#x521B;&#x5EFA;&#x65E0;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x7684; class&#x3002;">[&#x5F3A;&#x5236;] &#x7981;&#x6B62;&#x4E3A;&#x4E86; hook &#x811A;&#x672C;&#xFF0C;&#x521B;&#x5EFA;&#x65E0;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x7684; class&#x3002; <a href="#t12[&#x5F3A;&#x5236;] &#x7981;&#x6B62;&#x4E3A;&#x4E86; hook &#x811A;&#x672C;&#xFF0C;&#x521B;&#x5EFA;&#x65E0;&#x6837;&#x5F0F;&#x4FE1;&#x606F;&#x7684; class&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x4E0D;&#x5141;&#x8BB8; <code>class</code> &#x53EA;&#x7528;&#x4E8E;&#x8BA9; JavaScript &#x9009;&#x62E9;&#x67D0;&#x4E9B;&#x5143;&#x7D20;&#xFF0C;<code>class</code> &#x5E94;&#x8BE5;&#x5177;&#x6709;&#x660E;&#x786E;&#x7684;&#x8BED;&#x4E49;&#x548C;&#x6837;&#x5F0F;&#x3002;&#x5426;&#x5219;&#x5BB9;&#x6613;&#x5BFC;&#x81F4; CSS class &#x6CDB;&#x6EE5;&#x3002;</p>
+<p>&#x4F7F;&#x7528; <code>id</code>&#x3001;&#x5C5E;&#x6027;&#x9009;&#x62E9;&#x4F5C;&#x4E3A; hook &#x662F;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<h4 id="t13[&#x5F3A;&#x5236;] &#x540C;&#x4E00;&#x9875;&#x9762;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; name &#x4E0E; id&#x3002;">[&#x5F3A;&#x5236;] &#x540C;&#x4E00;&#x9875;&#x9762;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; name &#x4E0E; id&#x3002; <a href="#t13[&#x5F3A;&#x5236;] &#x540C;&#x4E00;&#x9875;&#x9762;&#xFF0C;&#x5E94;&#x907F;&#x514D;&#x4F7F;&#x7528;&#x76F8;&#x540C;&#x7684; name &#x4E0E; id&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>IE &#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x6DF7;&#x6DC6;&#x5143;&#x7D20;&#x7684; <code>id</code> &#x548C; <code>name</code> &#x5C5E;&#x6027;&#xFF0C; <code>document.getElementById</code> &#x53EF;&#x80FD;&#x83B7;&#x5F97;&#x4E0D;&#x671F;&#x671B;&#x7684;&#x5143;&#x7D20;&#x3002;&#x6240;&#x4EE5;&#x5728;&#x5BF9;&#x5143;&#x7D20;&#x7684; <code>id</code> &#x4E0E; <code>name</code> &#x5C5E;&#x6027;&#x7684;&#x547D;&#x540D;&#x9700;&#x8981;&#x975E;&#x5E38;&#x5C0F;&#x5FC3;&#x3002;</p>
+<p>&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x597D;&#x7684;&#x5B9E;&#x8DF5;&#x662F;&#xFF0C;&#x4E3A; <code>id</code> &#x548C; <code>name</code> &#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x547D;&#x540D;&#x6CD5;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;foo&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;foo&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span>&gt;</span><span class="javascript">
+<span class="hljs-comment">// IE6 &#x5C06;&#x663E;&#x793A; INPUT</span>
+alert(<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;foo&apos;</span>).tagName);
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+`
+</code></pre>
+<h3 id="t142.3 &#x6807;&#x7B7E;">2.3 &#x6807;&#x7B7E; <a href="#t142.3 &#x6807;&#x7B7E;"> # </a></h3>
+<h4 id="t15[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;">[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002; <a href="#t15[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello StyleGuide!<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">P</span>&gt;</span>Hello StyleGuide!<span class="hljs-tag">&lt;/<span class="hljs-title">P</span>&gt;</span>
+</code></pre>
+<h4 id="t16[&#x5F3A;&#x5236;] &#x5BF9;&#x4E8E;&#x65E0;&#x9700;&#x81EA;&#x95ED;&#x5408;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x81EA;&#x95ED;&#x5408;&#x3002;">[&#x5F3A;&#x5236;] &#x5BF9;&#x4E8E;&#x65E0;&#x9700;&#x81EA;&#x95ED;&#x5408;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x81EA;&#x95ED;&#x5408;&#x3002; <a href="#t16[&#x5F3A;&#x5236;] &#x5BF9;&#x4E8E;&#x65E0;&#x9700;&#x81EA;&#x95ED;&#x5408;&#x7684;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x81EA;&#x95ED;&#x5408;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5E38;&#x89C1;&#x65E0;&#x9700;&#x81EA;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x6709; <code>input</code>&#x3001;<code>br</code>&#x3001;<code>img</code>&#x3001;<code>hr</code> &#x7B49;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;title&quot;</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;title&quot;</span> /&gt;</span>
+</code></pre>
+<h4 id="t17[&#x5F3A;&#x5236;] &#x5BF9; HTML5 &#x4E2D;&#x89C4;&#x5B9A;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x7684;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x3002;">[&#x5F3A;&#x5236;] &#x5BF9; HTML5 &#x4E2D;&#x89C4;&#x5B9A;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x7684;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x3002; <a href="#t17[&#x5F3A;&#x5236;] &#x5BF9; HTML5 &#x4E2D;&#x89C4;&#x5B9A;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x7684;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x7701;&#x7565;&#x95ED;&#x5408;&#x6807;&#x7B7E;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5BF9;&#x4EE3;&#x7801;&#x4F53;&#x79EF;&#x8981;&#x6C42;&#x975E;&#x5E38;&#x4E25;&#x82DB;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x53EF;&#x4EE5;&#x4F8B;&#x5916;&#x3002;&#x6BD4;&#x5982;&#xFF1A;&#x7B2C;&#x4E09;&#x65B9;&#x9875;&#x9762;&#x4F7F;&#x7528;&#x7684;&#x6295;&#x653E;&#x7CFB;&#x7EDF;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>first<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>second<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>first
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>second
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<h4 id="t18[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x4F7F;&#x7528;&#x5FC5;&#x987B;&#x7B26;&#x5408;&#x6807;&#x7B7E;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x3002;">[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x4F7F;&#x7528;&#x5FC5;&#x987B;&#x7B26;&#x5408;&#x6807;&#x7B7E;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x3002; <a href="#t18[&#x5F3A;&#x5236;] &#x6807;&#x7B7E;&#x4F7F;&#x7528;&#x5FC5;&#x987B;&#x7B26;&#x5408;&#x6807;&#x7B7E;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x6BD4;&#x5982; <code>div</code> &#x4E0D;&#x5F97;&#x7F6E;&#x4E8E; <code>p</code> &#x4E2D;&#xFF0C;<code>tbody</code> &#x5FC5;&#x987B;&#x7F6E;&#x4E8E; <code>table</code> &#x4E2D;&#x3002;</p>
+<p>&#x8BE6;&#x7EC6;&#x7684;&#x6807;&#x7B7E;&#x5D4C;&#x5957;&#x89C4;&#x5219;&#x53C2;&#x89C1;<a href="http://www.cs.tut.fi/~jkorpela/html5.dtd">HTML DTD</a>&#x4E2D;&#x7684; <code>Elements</code> &#x5B9A;&#x4E49;&#x90E8;&#x5206;&#x3002;</p>
+<h4 id="t19[&#x5EFA;&#x8BAE;] HTML &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x4E49;&#x3002;">[&#x5EFA;&#x8BAE;] HTML &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x4E49;&#x3002; <a href="#t19[&#x5EFA;&#x8BAE;] HTML &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x8BE5;&#x9075;&#x5FAA;&#x6807;&#x7B7E;&#x7684;&#x8BED;&#x4E49;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x4E0B;&#x9762;&#x662F;&#x5E38;&#x89C1;&#x6807;&#x7B7E;&#x8BED;&#x4E49;</p>
+<ul>
+<li>p - &#x6BB5;&#x843D;</li>
+<li>h1,h2,h3,h4,h5,h6 - &#x5C42;&#x7EA7;&#x6807;&#x9898;</li>
+<li>strong,em - &#x5F3A;&#x8C03;</li>
+<li>ins - &#x63D2;&#x5165;</li>
+<li>del - &#x5220;&#x9664;</li>
+<li>abbr - &#x7F29;&#x5199;</li>
+<li>code - &#x4EE3;&#x7801;&#x6807;&#x8BC6;</li>
+<li>cite - &#x5F15;&#x8FF0;&#x6765;&#x6E90;&#x4F5C;&#x54C1;&#x7684;&#x6807;&#x9898;</li>
+<li>q - &#x5F15;&#x7528;</li>
+<li>blockquote - &#x4E00;&#x6BB5;&#x6216;&#x957F;&#x7BC7;&#x5F15;&#x7528;</li>
+<li>ul - &#x65E0;&#x5E8F;&#x5217;&#x8868;</li>
+<li>ol - &#x6709;&#x5E8F;&#x5217;&#x8868;</li>
+<li>dl,dt,dd - &#x5B9A;&#x4E49;&#x5217;&#x8868;</li>
+</ul>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Esprima serves as an important <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>building block<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> for some JavaScript language tools.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>Esprima serves as an important <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;strong&quot;</span>&gt;</span>building block<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span> for some JavaScript language tools.<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="t20[&#x5EFA;&#x8BAE;] &#x5728; CSS &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76F8;&#x540C;&#x9700;&#x6C42;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x5F97;&#x4F7F;&#x7528;&#x8868;&#x683C;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728; CSS &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76F8;&#x540C;&#x9700;&#x6C42;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x5F97;&#x4F7F;&#x7528;&#x8868;&#x683C;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#x3002; <a href="#t20[&#x5EFA;&#x8BAE;] &#x5728; CSS &#x53EF;&#x4EE5;&#x5B9E;&#x73B0;&#x76F8;&#x540C;&#x9700;&#x6C42;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x5F97;&#x4F7F;&#x7528;&#x8868;&#x683C;&#x8FDB;&#x884C;&#x5E03;&#x5C40;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5728;&#x517C;&#x5BB9;&#x6027;&#x5141;&#x8BB8;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x5E94;&#x5C3D;&#x91CF;&#x4FDD;&#x6301;&#x8BED;&#x4E49;&#x6B63;&#x786E;&#x6027;&#x3002;&#x5BF9;&#x7F51;&#x683C;&#x5BF9;&#x9F50;&#x548C;&#x62C9;&#x4F38;&#x6027;&#x6709;&#x4E25;&#x683C;&#x8981;&#x6C42;&#x7684;&#x573A;&#x666F;&#x5141;&#x8BB8;&#x4F8B;&#x5916;&#xFF0C;&#x5982;&#x591A;&#x5217;&#x590D;&#x6742;&#x8868;&#x5355;&#x3002;</p>
+<h4 id="t21[&#x5EFA;&#x8BAE;] &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x5C3D;&#x91CF;&#x7B80;&#x6D01;&#xFF0C;&#x51CF;&#x5C11;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6807;&#x7B7E;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x5C3D;&#x91CF;&#x7B80;&#x6D01;&#xFF0C;&#x51CF;&#x5C11;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6807;&#x7B7E;&#x3002; <a href="#t21[&#x5EFA;&#x8BAE;] &#x6807;&#x7B7E;&#x7684;&#x4F7F;&#x7528;&#x5E94;&#x5C3D;&#x91CF;&#x7B80;&#x6D01;&#xFF0C;&#x51CF;&#x5C11;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x6807;&#x7B7E;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;avatar&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;image.png&quot;</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;avatar&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;image.png&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+</code></pre>
+<h3 id="t222.4 &#x5C5E;&#x6027;">2.4 &#x5C5E;&#x6027; <a href="#t222.4 &#x5C5E;&#x6027;"> # </a></h3>
+<h4 id="t23[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;">[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002; <a href="#t23[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x540D;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5C0F;&#x5199;&#x5B57;&#x6BCD;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">cellspacing</span>=<span class="hljs-value">&quot;0&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">cellSpacing</span>=<span class="hljs-value">&quot;0&quot;</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+<h4 id="t24[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x503C;&#x5FC5;&#x987B;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x56F4;&#x3002;">[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x503C;&#x5FC5;&#x987B;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x56F4;&#x3002; <a href="#t24[&#x5F3A;&#x5236;] &#x5C5E;&#x6027;&#x503C;&#x5FC5;&#x987B;&#x7528;&#x53CC;&#x5F15;&#x53F7;&#x5305;&#x56F4;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x4E0D;&#x5141;&#x8BB8;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;&#xFF0C;&#x4E0D;&#x5141;&#x8BB8;&#x4E0D;&#x4F7F;&#x7528;&#x5F15;&#x53F7;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;esl.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&apos;esl.js&apos;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">esl.js</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h4 id="t25[&#x5EFA;&#x8BAE;] &#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0D;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x503C;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0D;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x503C;&#x3002; <a href="#t25[&#x5EFA;&#x8BAE;] &#x5E03;&#x5C14;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x5EFA;&#x8BAE;&#x4E0D;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;&#x503C;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">disabled</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;1&quot;</span> <span class="hljs-attribute">checked</span>&gt;</span>
+</code></pre>
+<h4 id="t26[&#x5EFA;&#x8BAE;] &#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5EFA;&#x8BAE;&#x4EE5; xxx- &#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; data-&#x3002;">[&#x5EFA;&#x8BAE;] &#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5EFA;&#x8BAE;&#x4EE5; xxx- &#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; data-&#x3002; <a href="#t26[&#x5EFA;&#x8BAE;] &#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x5EFA;&#x8BAE;&#x4EE5; xxx- &#x4E3A;&#x524D;&#x7F00;&#xFF0C;&#x63A8;&#x8350;&#x4F7F;&#x7528; data-&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x524D;&#x7F00;&#x6709;&#x52A9;&#x4E8E;&#x533A;&#x5206;&#x81EA;&#x5B9A;&#x4E49;&#x5C5E;&#x6027;&#x548C;&#x6807;&#x51C6;&#x5B9A;&#x4E49;&#x7684;&#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">ol</span> <span class="hljs-attribute">data-ui-type</span>=<span class="hljs-value">&quot;Select&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span>
+</code></pre>
+<h2 id="t273 &#x901A;&#x7528;">3 &#x901A;&#x7528; <a href="#t273 &#x901A;&#x7528;"> # </a></h2>
+<h3 id="t283.1 DOCTYPE">3.1 DOCTYPE <a href="#t283.1 DOCTYPE"> # </a></h3>
+<h4 id="t29[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; HTML5 &#x7684; doctype &#x6765;&#x542F;&#x7528;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5927;&#x5199;&#x7684; DOCTYPE&#x3002;">[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; HTML5 &#x7684; doctype &#x6765;&#x542F;&#x7528;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5927;&#x5199;&#x7684; DOCTYPE&#x3002; <a href="#t29[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; HTML5 &#x7684; doctype &#x6765;&#x542F;&#x7528;&#x6807;&#x51C6;&#x6A21;&#x5F0F;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x5927;&#x5199;&#x7684; DOCTYPE&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+</code></pre>
+<h4 id="t30[&#x5EFA;&#x8BAE;] &#x542F;&#x7528; IE Edge &#x6A21;&#x5F0F;&#x3002;">[&#x5EFA;&#x8BAE;] &#x542F;&#x7528; IE Edge &#x6A21;&#x5F0F;&#x3002; <a href="#t30[&#x5EFA;&#x8BAE;] &#x542F;&#x7528; IE Edge &#x6A21;&#x5F0F;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">http-equiv</span>=<span class="hljs-value">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attribute">content</span>=<span class="hljs-value">&quot;IE=Edge&quot;</span>&gt;</span>
+</code></pre>
+<h4 id="t31[&#x5EFA;&#x8BAE;] &#x5728; html &#x6807;&#x7B7E;&#x4E0A;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684; lang &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728; html &#x6807;&#x7B7E;&#x4E0A;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684; lang &#x5C5E;&#x6027;&#x3002; <a href="#t31[&#x5EFA;&#x8BAE;] &#x5728; html &#x6807;&#x7B7E;&#x4E0A;&#x8BBE;&#x7F6E;&#x6B63;&#x786E;&#x7684; lang &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x6709;&#x52A9;&#x4E8E;&#x63D0;&#x9AD8;&#x9875;&#x9762;&#x7684;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#xFF0C;&#x5982;&#xFF1A;&#x8BA9;&#x8BED;&#x97F3;&#x5408;&#x6210;&#x5DE5;&#x5177;&#x786E;&#x5B9A;&#x5176;&#x6240;&#x5E94;&#x8BE5;&#x91C7;&#x7528;&#x7684;&#x53D1;&#x97F3;&#xFF0C;&#x4EE4;&#x7FFB;&#x8BD1;&#x5DE5;&#x5177;&#x786E;&#x5B9A;&#x5176;&#x7FFB;&#x8BD1;&#x8BED;&#x8A00;&#x7B49;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">&quot;zh-CN&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="t323.2 &#x7F16;&#x7801;">3.2 &#x7F16;&#x7801; <a href="#t323.2 &#x7F16;&#x7801;"> # </a></h3>
+<h4 id="t33[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7CBE;&#x7B80;&#x5F62;&#x5F0F;&#xFF0C;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x3002;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7684; meta &#x5FC5;&#x987B;&#x662F; head &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#x3002;">[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7CBE;&#x7B80;&#x5F62;&#x5F0F;&#xFF0C;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x3002;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7684; meta &#x5FC5;&#x987B;&#x662F; head &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#x3002; <a href="#t33[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x7CBE;&#x7B80;&#x5F62;&#x5F0F;&#xFF0C;&#x660E;&#x786E;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x3002;&#x6307;&#x5B9A;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7684; meta &#x5FC5;&#x987B;&#x662F; head &#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x89C1; <a href="http://www.qianduan.net/html5-charset-can-it.html">HTML5 Charset&#x80FD;&#x7528;&#x5417;</a> &#x4E00;&#x6587;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+        ......
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+        ......
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<h4 id="t34[&#x5EFA;&#x8BAE;] HTML &#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x65E0; BOM &#x7684; UTF-8 &#x7F16;&#x7801;&#x3002;">[&#x5EFA;&#x8BAE;] HTML &#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x65E0; BOM &#x7684; UTF-8 &#x7F16;&#x7801;&#x3002; <a href="#t34[&#x5EFA;&#x8BAE;] HTML &#x6587;&#x4EF6;&#x4F7F;&#x7528;&#x65E0; BOM &#x7684; UTF-8 &#x7F16;&#x7801;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><code>UTF-8</code> &#x7F16;&#x7801;&#x5177;&#x6709;&#x66F4;&#x5E7F;&#x6CDB;&#x7684;&#x9002;&#x5E94;&#x6027;&#x3002;<code>BOM</code> &#x5728;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x6216;&#x5DE5;&#x5177;&#x5904;&#x7406;&#x6587;&#x4EF6;&#x65F6;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x5E72;&#x6270;&#x3002;</p>
+<h3 id="t353.3 CSS &#x548C; JavaScript &#x5F15;&#x5165;">3.3 CSS &#x548C; JavaScript &#x5F15;&#x5165; <a href="#t353.3 CSS &#x548C; JavaScript &#x5F15;&#x5165;"> # </a></h3>
+<h4 id="t36[&#x5F3A;&#x5236;] &#x5F15;&#x5165; CSS &#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; rel=&quot;stylesheet&quot;&#x3002;">[&#x5F3A;&#x5236;] &#x5F15;&#x5165; CSS &#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; rel=&quot;stylesheet&quot;&#x3002; <a href="#t36[&#x5F3A;&#x5236;] &#x5F15;&#x5165; CSS &#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; rel=" stylesheet"。"=""> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;stylesheet&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;page.css&quot;</span>&gt;</span>
+</code></pre>
+<h4 id="t37[&#x5EFA;&#x8BAE;] &#x5F15;&#x5165; CSS &#x548C; JavaScript &#x65F6;&#x65E0;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5F15;&#x5165; CSS &#x548C; JavaScript &#x65F6;&#x65E0;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x3002; <a href="#t37[&#x5EFA;&#x8BAE;] &#x5F15;&#x5165; CSS &#x548C; JavaScript &#x65F6;&#x65E0;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><code>text/css</code> &#x548C; <code>text/javascript</code> &#x662F; <code>type</code> &#x7684;&#x9ED8;&#x8BA4;&#x503C;&#x3002;</p>
+<h4 id="t38[&#x5EFA;&#x8BAE;] &#x5C55;&#x73B0;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; CSS &#x4E2D;&#xFF0C;&#x884C;&#x4E3A;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; JavaScript &#x4E2D;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5C55;&#x73B0;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; CSS &#x4E2D;&#xFF0C;&#x884C;&#x4E3A;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; JavaScript &#x4E2D;&#x3002; <a href="#t38[&#x5EFA;&#x8BAE;] &#x5C55;&#x73B0;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; CSS &#x4E2D;&#xFF0C;&#x884C;&#x4E3A;&#x5B9A;&#x4E49;&#x653E;&#x7F6E;&#x4E8E;&#x5916;&#x90E8; JavaScript &#x4E2D;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x7ED3;&#x6784;-&#x6837;&#x5F0F;-&#x884C;&#x4E3A;&#x7684;&#x4EE3;&#x7801;&#x5206;&#x79BB;&#xFF0C;&#x5BF9;&#x4E8E;&#x63D0;&#x9AD8;&#x4EE3;&#x7801;&#x7684;&#x53EF;&#x9605;&#x8BFB;&#x6027;&#x548C;&#x7EF4;&#x62A4;&#x6027;&#x90FD;&#x6709;&#x597D;&#x5904;&#x3002;</p>
+<h4 id="t39[&#x5EFA;&#x8BAE;] &#x5728; head &#x4E2D;&#x5F15;&#x5165;&#x9875;&#x9762;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709; CSS &#x8D44;&#x6E90;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728; head &#x4E2D;&#x5F15;&#x5165;&#x9875;&#x9762;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709; CSS &#x8D44;&#x6E90;&#x3002; <a href="#t39[&#x5EFA;&#x8BAE;] &#x5728; head &#x4E2D;&#x5F15;&#x5165;&#x9875;&#x9762;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709; CSS &#x8D44;&#x6E90;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5728;&#x9875;&#x9762;&#x6E32;&#x67D3;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x65B0;&#x7684;CSS&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x5143;&#x7D20;&#x7684;&#x6837;&#x5F0F;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x548C;&#x7ED8;&#x5236;&#xFF0C;&#x9875;&#x9762;&#x95EA;&#x70C1;&#x3002;</p>
+<h4 id="t40[&#x5EFA;&#x8BAE;] JavaScript &#x5E94;&#x5F53;&#x653E;&#x5728;&#x9875;&#x9762;&#x672B;&#x5C3E;&#xFF0C;&#x6216;&#x91C7;&#x7528;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x3002;">[&#x5EFA;&#x8BAE;] JavaScript &#x5E94;&#x5F53;&#x653E;&#x5728;&#x9875;&#x9762;&#x672B;&#x5C3E;&#xFF0C;&#x6216;&#x91C7;&#x7528;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x3002; <a href="#t40[&#x5EFA;&#x8BAE;] JavaScript &#x5E94;&#x5F53;&#x653E;&#x5728;&#x9875;&#x9762;&#x672B;&#x5C3E;&#xFF0C;&#x6216;&#x91C7;&#x7528;&#x5F02;&#x6B65;&#x52A0;&#x8F7D;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5C06; <code>script</code> &#x653E;&#x5728;&#x9875;&#x9762;&#x4E2D;&#x95F4;&#x5C06;&#x963B;&#x65AD;&#x9875;&#x9762;&#x7684;&#x6E32;&#x67D3;&#x3002;&#x51FA;&#x4E8E;&#x6027;&#x80FD;&#x65B9;&#x9762;&#x7684;&#x8003;&#x8651;&#xFF0C;&#x5982;&#x975E;&#x5FC5;&#x8981;&#xFF0C;&#x8BF7;&#x9075;&#x5B88;&#x6B64;&#x6761;&#x5EFA;&#x8BAE;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- a lot of elements --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;init-behavior.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+</code></pre>
+<h4 id="t41[&#x5EFA;&#x8BAE;] &#x79FB;&#x52A8;&#x73AF;&#x5883;&#x6216;&#x53EA;&#x9488;&#x5BF9;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x8BBE;&#x8BA1;&#x7684; Web &#x5E94;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x7684; URL &#x534F;&#x8BAE;&#x90E8;&#x5206;&#x4E0E;&#x9875;&#x9762;&#x76F8;&#x540C;&#xFF0C;&#x5EFA;&#x8BAE;&#x7701;&#x7565;&#x534F;&#x8BAE;&#x524D;&#x7F00;&#x3002;">[&#x5EFA;&#x8BAE;] &#x79FB;&#x52A8;&#x73AF;&#x5883;&#x6216;&#x53EA;&#x9488;&#x5BF9;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x8BBE;&#x8BA1;&#x7684; Web &#x5E94;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x7684; URL &#x534F;&#x8BAE;&#x90E8;&#x5206;&#x4E0E;&#x9875;&#x9762;&#x76F8;&#x540C;&#xFF0C;&#x5EFA;&#x8BAE;&#x7701;&#x7565;&#x534F;&#x8BAE;&#x524D;&#x7F00;&#x3002; <a href="#t41[&#x5EFA;&#x8BAE;] &#x79FB;&#x52A8;&#x73AF;&#x5883;&#x6216;&#x53EA;&#x9488;&#x5BF9;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x8BBE;&#x8BA1;&#x7684; Web &#x5E94;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x5F15;&#x7528;&#x5916;&#x90E8;&#x8D44;&#x6E90;&#x7684; URL &#x534F;&#x8BAE;&#x90E8;&#x5206;&#x4E0E;&#x9875;&#x9762;&#x76F8;&#x540C;&#xFF0C;&#x5EFA;&#x8BAE;&#x7701;&#x7565;&#x534F;&#x8BAE;&#x524D;&#x7F00;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528; <code>protocol-relative URL</code> &#x5F15;&#x5165; CSS&#xFF0C;&#x5728; <code>IE7/8</code> &#x4E0B;&#xFF0C;&#x4F1A;&#x53D1;&#x4E24;&#x6B21;&#x8BF7;&#x6C42;&#x3002;&#x662F;&#x5426;&#x4F7F;&#x7528; <code>protocol-relative URL</code> &#x5E94;&#x5145;&#x5206;&#x8003;&#x8651;&#x9875;&#x9762;&#x9488;&#x5BF9;&#x7684;&#x73AF;&#x5883;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;//s1.bdstatic.com/cache/static/jquery-1.10.2.min_f2fb5194.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+</code></pre>
+<h2 id="t424 head">4 head <a href="#t424 head"> # </a></h2>
+<h3 id="t434.1 title">4.1 title <a href="#t434.1 title"> # </a></h3>
+<h4 id="t44[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x5305;&#x542B; title &#x6807;&#x7B7E;&#x58F0;&#x660E;&#x6807;&#x9898;&#x3002;">[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x5305;&#x542B; title &#x6807;&#x7B7E;&#x58F0;&#x660E;&#x6807;&#x9898;&#x3002; <a href="#t44[&#x5F3A;&#x5236;] &#x9875;&#x9762;&#x5FC5;&#x987B;&#x5305;&#x542B; title &#x6807;&#x7B7E;&#x58F0;&#x660E;&#x6807;&#x9898;&#x3002;"> # </a></h4>
+<h4 id="t45[&#x5F3A;&#x5236;] title &#x5FC5;&#x987B;&#x4F5C;&#x4E3A; head &#x7684;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x7D27;&#x968F; charset &#x58F0;&#x660E;&#x4E4B;&#x540E;&#x3002;">[&#x5F3A;&#x5236;] title &#x5FC5;&#x987B;&#x4F5C;&#x4E3A; head &#x7684;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x7D27;&#x968F; charset &#x58F0;&#x660E;&#x4E4B;&#x540E;&#x3002; <a href="#t45[&#x5F3A;&#x5236;] title &#x5FC5;&#x987B;&#x4F5C;&#x4E3A; head &#x7684;&#x76F4;&#x63A5;&#x5B50;&#x5143;&#x7D20;&#xFF0C;&#x5E76;&#x7D27;&#x968F; charset &#x58F0;&#x660E;&#x4E4B;&#x540E;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><code>title</code> &#x4E2D;&#x5982;&#x679C;&#x5305;&#x542B; ASCII &#x4E4B;&#x5916;&#x7684;&#x5B57;&#x7B26;&#xFF0C;&#x6D4F;&#x89C8;&#x5668;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5B57;&#x7B26;&#x7F16;&#x7801;&#x7C7B;&#x578B;&#x624D;&#x80FD;&#x8FDB;&#x884C;&#x89E3;&#x7801;&#xFF0C;&#x5426;&#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x4E71;&#x7801;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">&quot;UTF-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>&#x9875;&#x9762;&#x6807;&#x9898;<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+</code></pre>
+<h3 id="t464.2 favicon">4.2 favicon <a href="#t464.2 favicon"> # </a></h3>
+<h4 id="t47[&#x5F3A;&#x5236;] &#x4FDD;&#x8BC1; favicon &#x53EF;&#x8BBF;&#x95EE;&#x3002;">[&#x5F3A;&#x5236;] &#x4FDD;&#x8BC1; favicon &#x53EF;&#x8BBF;&#x95EE;&#x3002; <a href="#t47[&#x5F3A;&#x5236;] &#x4FDD;&#x8BC1; favicon &#x53EF;&#x8BBF;&#x95EE;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5728;&#x672A;&#x6307;&#x5B9A; favicon &#x65F6;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x6D4F;&#x89C8;&#x5668;&#x4F1A;&#x8BF7;&#x6C42; Web Server &#x6839;&#x76EE;&#x5F55;&#x4E0B;&#x7684; <code>favicon.ico</code> &#x3002;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1; favicon &#x53EF;&#x8BBF;&#x95EE;&#xFF0C;&#x907F;&#x514D; 404&#xFF0C;&#x5FC5;&#x987B;&#x9075;&#x5FAA;&#x4EE5;&#x4E0B;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#x4E4B;&#x4E00;&#xFF1A;</p>
+<ol>
+<li>&#x5728; Web Server &#x6839;&#x76EE;&#x5F55;&#x653E;&#x7F6E; <code>favicon.ico</code> &#x6587;&#x4EF6;&#x3002;</li>
+<li>&#x4F7F;&#x7528; <code>link</code> &#x6307;&#x5B9A; favicon&#x3002;</li>
+</ol>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">&quot;shortcut icon&quot;</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">&quot;path/to/favicon.ico&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="t484.3 viewport">4.3 viewport <a href="#t484.3 viewport"> # </a></h3>
+<h4 id="t49[&#x5EFA;&#x8BAE;] &#x82E5;&#x9875;&#x9762;&#x6B32;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x53CB;&#x597D;&#xFF0C;&#x9700;&#x6307;&#x5B9A;&#x9875;&#x9762;&#x7684; viewport&#x3002;">[&#x5EFA;&#x8BAE;] &#x82E5;&#x9875;&#x9762;&#x6B32;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x53CB;&#x597D;&#xFF0C;&#x9700;&#x6307;&#x5B9A;&#x9875;&#x9762;&#x7684; viewport&#x3002; <a href="#t49[&#x5EFA;&#x8BAE;] &#x82E5;&#x9875;&#x9762;&#x6B32;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x53CB;&#x597D;&#xFF0C;&#x9700;&#x6307;&#x5B9A;&#x9875;&#x9762;&#x7684; viewport&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>viewport meta tag &#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x53EF;&#x89C6;&#x533A;&#x57DF;&#x7684;&#x5BBD;&#x5EA6;&#x548C;&#x521D;&#x59CB;&#x7F29;&#x653E;&#x5927;&#x5C0F;&#xFF0C;&#x907F;&#x514D;&#x5728;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x4E0A;&#x51FA;&#x73B0;&#x9875;&#x9762;&#x5C55;&#x793A;&#x4E0D;&#x6B63;&#x5E38;&#x3002;</p>
+<p>&#x6BD4;&#x5982;&#xFF0C;&#x5728;&#x9875;&#x9762;&#x5BBD;&#x5EA6;&#x5C0F;&#x4E8E; <code>980px</code> &#x65F6;&#xFF0C;&#x82E5;&#x9700; iOS &#x8BBE;&#x5907;&#x53CB;&#x597D;&#xFF0C;&#x5E94;&#x5F53;&#x8BBE;&#x7F6E; viewport &#x7684; <code>width</code> &#x503C;&#x6765;&#x9002;&#x5E94;&#x4F60;&#x7684;&#x9875;&#x9762;&#x5BBD;&#x5EA6;&#x3002;&#x540C;&#x65F6;&#x56E0;&#x4E3A;&#x4E0D;&#x540C;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x5206;&#x8FA8;&#x7387;&#x4E0D;&#x540C;&#xFF0C;&#x5728;&#x8BBE;&#x7F6E;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x4F7F;&#x7528; <code>device-width</code> &#x548C; <code>device-height</code> &#x53D8;&#x91CF;&#x3002;</p>
+<p>&#x53E6;&#x5916;&#xFF0C;&#x4E3A;&#x4E86;&#x4F7F; viewport &#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#xFF0C;&#x5728;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x6837;&#x5F0F;&#x5E03;&#x5C40;&#x8BBE;&#x8BA1;&#x4E0A;&#x4E5F;&#x8981;&#x505A;&#x76F8;&#x5E94;&#x8C03;&#x6574;&#xFF0C;&#x5982;&#x907F;&#x514D;&#x7EDD;&#x5BF9;&#x5B9A;&#x4F4D;&#x7B49;&#x3002;&#x5173;&#x4E8E; viewport &#x7684;&#x66F4;&#x591A;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x89C1; <a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Reference/SafariWebContent/UsingtheViewport/UsingtheViewport.html#//apple_ref/doc/uid/TP40006509-SW26">Safari Web Content Guide&#x7684;&#x4ECB;&#x7ECD;</a></p>
+<h2 id="t505 &#x56FE;&#x7247;">5 &#x56FE;&#x7247; <a href="#t505 &#x56FE;&#x7247;"> # </a></h2>
+<h4 id="t51[&#x5F3A;&#x5236;] &#x7981;&#x6B62; img &#x7684; src &#x53D6;&#x503C;&#x4E3A;&#x7A7A;&#x3002;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x56FE;&#x7247;&#x4E5F;&#x8981;&#x589E;&#x52A0;&#x9ED8;&#x8BA4;&#x7684; src&#x3002;">[&#x5F3A;&#x5236;] &#x7981;&#x6B62; img &#x7684; src &#x53D6;&#x503C;&#x4E3A;&#x7A7A;&#x3002;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x56FE;&#x7247;&#x4E5F;&#x8981;&#x589E;&#x52A0;&#x9ED8;&#x8BA4;&#x7684; src&#x3002; <a href="#t51[&#x5F3A;&#x5236;] &#x7981;&#x6B62; img &#x7684; src &#x53D6;&#x503C;&#x4E3A;&#x7A7A;&#x3002;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#x7684;&#x56FE;&#x7247;&#x4E5F;&#x8981;&#x589E;&#x52A0;&#x9ED8;&#x8BA4;&#x7684; src&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><code>src</code> &#x53D6;&#x503C;&#x4E3A;&#x7A7A;&#xFF0C;&#x4F1A;&#x5BFC;&#x81F4;&#x90E8;&#x5206;&#x6D4F;&#x89C8;&#x5668;&#x91CD;&#x65B0;&#x52A0;&#x8F7D;&#x4E00;&#x6B21;&#x5F53;&#x524D;&#x9875;&#x9762;&#xFF0C;&#x53C2;&#x8003;&#xFF1A;<a href="https://developer.yahoo.com/performance/rules.html#emptysrc">https://developer.yahoo.com/performance/rules.html#emptysrc</a></p>
+<h4 id="t52[&#x5EFA;&#x8BAE;] &#x907F;&#x514D;&#x4E3A; img &#x6DFB;&#x52A0;&#x4E0D;&#x5FC5;&#x8981;&#x7684; title &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x907F;&#x514D;&#x4E3A; img &#x6DFB;&#x52A0;&#x4E0D;&#x5FC5;&#x8981;&#x7684; title &#x5C5E;&#x6027;&#x3002; <a href="#t52[&#x5EFA;&#x8BAE;] &#x907F;&#x514D;&#x4E3A; img &#x6DFB;&#x52A0;&#x4E0D;&#x5FC5;&#x8981;&#x7684; title &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x591A;&#x4F59;&#x7684; <code>title</code> &#x5F71;&#x54CD;&#x770B;&#x56FE;&#x4F53;&#x9A8C;&#xFF0C;&#x5E76;&#x4E14;&#x589E;&#x52A0;&#x4E86;&#x9875;&#x9762;&#x5C3A;&#x5BF8;&#x3002;</p>
+<h4 id="t53[&#x5EFA;&#x8BAE;] &#x4E3A;&#x91CD;&#x8981;&#x56FE;&#x7247;&#x6DFB;&#x52A0; alt &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x4E3A;&#x91CD;&#x8981;&#x56FE;&#x7247;&#x6DFB;&#x52A0; alt &#x5C5E;&#x6027;&#x3002; <a href="#t53[&#x5EFA;&#x8BAE;] &#x4E3A;&#x91CD;&#x8981;&#x56FE;&#x7247;&#x6DFB;&#x52A0; alt &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x53EF;&#x4EE5;&#x63D0;&#x9AD8;&#x56FE;&#x7247;&#x52A0;&#x8F7D;&#x5931;&#x8D25;&#x65F6;&#x7684;&#x7528;&#x6237;&#x4F53;&#x9A8C;&#x3002;</p>
+<h4 id="t54[&#x5EFA;&#x8BAE;] &#x6DFB;&#x52A0; width &#x548C; height &#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x9875;&#x9762;&#x6296;&#x52A8;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6DFB;&#x52A0; width &#x548C; height &#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x9875;&#x9762;&#x6296;&#x52A8;&#x3002; <a href="#t54[&#x5EFA;&#x8BAE;] &#x6DFB;&#x52A0; width &#x548C; height &#x5C5E;&#x6027;&#xFF0C;&#x4EE5;&#x907F;&#x514D;&#x9875;&#x9762;&#x6296;&#x52A8;&#x3002;"> # </a></h4>
+<h4 id="t55[&#x5EFA;&#x8BAE;] &#x6709;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; img &#x6807;&#x7B7E;&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; CSS &#x80CC;&#x666F;&#x56FE;&#x5B9E;&#x73B0;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6709;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; img &#x6807;&#x7B7E;&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; CSS &#x80CC;&#x666F;&#x56FE;&#x5B9E;&#x73B0;&#x3002; <a href="#t55[&#x5EFA;&#x8BAE;] &#x6709;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; img &#x6807;&#x7B7E;&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#x91C7;&#x7528; CSS &#x80CC;&#x666F;&#x56FE;&#x5B9E;&#x73B0;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<ol>
+<li>&#x4EA7;&#x54C1; logo&#x3001;&#x7528;&#x6237;&#x5934;&#x50CF;&#x3001;&#x7528;&#x6237;&#x4EA7;&#x751F;&#x7684;&#x56FE;&#x7247;&#x7B49;&#x6709;&#x6F5C;&#x5728;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x4EE5; <code>img</code> &#x5F62;&#x5F0F;&#x5B9E;&#x73B0;&#xFF0C;&#x80FD;&#x65B9;&#x4FBF;&#x7528;&#x6237;&#x4E0B;&#x8F7D;&#x3002;</li>
+<li>&#x65E0;&#x4E0B;&#x8F7D;&#x9700;&#x6C42;&#x7684;&#x56FE;&#x7247;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;icon&#x3001;&#x80CC;&#x666F;&#x3001;&#x4EE3;&#x7801;&#x4F7F;&#x7528;&#x7684;&#x56FE;&#x7247;&#x7B49;&#xFF0C;&#x5C3D;&#x53EF;&#x80FD;&#x91C7;&#x7528; CSS &#x80CC;&#x666F;&#x56FE;&#x5B9E;&#x73B0;&#x3002;</li>
+</ol>
+<h2 id="t566 &#x8868;&#x5355;">6 &#x8868;&#x5355; <a href="#t566 &#x8868;&#x5355;"> # </a></h2>
+<h3 id="t576.1 &#x63A7;&#x4EF6;&#x6807;&#x9898;">6.1 &#x63A7;&#x4EF6;&#x6807;&#x9898; <a href="#t576.1 &#x63A7;&#x4EF6;&#x6807;&#x9898;"> # </a></h3>
+<h4 id="t58[&#x5F3A;&#x5236;] &#x6709;&#x6587;&#x672C;&#x6807;&#x9898;&#x7684;&#x63A7;&#x4EF6;&#x5FC5;&#x987B;&#x4F7F;&#x7528; label &#x6807;&#x7B7E;&#x5C06;&#x5176;&#x4E0E;&#x5176;&#x6807;&#x9898;&#x76F8;&#x5173;&#x8054;&#x3002;">[&#x5F3A;&#x5236;] &#x6709;&#x6587;&#x672C;&#x6807;&#x9898;&#x7684;&#x63A7;&#x4EF6;&#x5FC5;&#x987B;&#x4F7F;&#x7528; label &#x6807;&#x7B7E;&#x5C06;&#x5176;&#x4E0E;&#x5176;&#x6807;&#x9898;&#x76F8;&#x5173;&#x8054;&#x3002; <a href="#t58[&#x5F3A;&#x5236;] &#x6709;&#x6587;&#x672C;&#x6807;&#x9898;&#x7684;&#x63A7;&#x4EF6;&#x5FC5;&#x987B;&#x4F7F;&#x7528; label &#x6807;&#x7B7E;&#x5C06;&#x5176;&#x4E0E;&#x5176;&#x6807;&#x9898;&#x76F8;&#x5173;&#x8054;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<ol>
+<li>&#x5C06;&#x63A7;&#x4EF6;&#x7F6E;&#x4E8E; <code>label</code> &#x5185;&#x3002;</li>
+<li><code>label</code> &#x7684; <code>for</code> &#x5C5E;&#x6027;&#x6307;&#x5411;&#x63A7;&#x4EF6;&#x7684; <code>id</code>&#x3002;</li>
+</ol>
+<p>&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x7B2C;&#x4E00;&#x79CD;&#xFF0C;&#x51CF;&#x5C11;&#x4E0D;&#x5FC5;&#x8981;&#x7684; <code>id</code>&#x3002;&#x5982;&#x679C; DOM &#x7ED3;&#x6784;&#x4E0D;&#x5141;&#x8BB8;&#x76F4;&#x63A5;&#x5D4C;&#x5957;&#xFF0C;&#x5219;&#x5E94;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x79CD;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">label</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;checkbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;confirm&quot;</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">&quot;on&quot;</span>&gt;</span> &#x6211;&#x5DF2;&#x786E;&#x8BA4;&#x4E0A;&#x8FF0;&#x6761;&#x6B3E;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">label</span> <span class="hljs-attribute">for</span>=<span class="hljs-value">&quot;username&quot;</span>&gt;</span>&#x7528;&#x6237;&#x540D;&#xFF1A;<span class="hljs-tag">&lt;/<span class="hljs-title">label</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;textbox&quot;</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;username&quot;</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">&quot;username&quot;</span>&gt;</span>
+</code></pre>
+<h3 id="t596.2 &#x6309;&#x94AE;">6.2 &#x6309;&#x94AE; <a href="#t596.2 &#x6309;&#x94AE;"> # </a></h3>
+<h4 id="t60[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; button &#x5143;&#x7D20;&#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x503C;&#x3002;">[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; button &#x5143;&#x7D20;&#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x503C;&#x3002; <a href="#t60[&#x5F3A;&#x5236;] &#x4F7F;&#x7528; button &#x5143;&#x7D20;&#x65F6;&#x5FC5;&#x987B;&#x6307;&#x660E; type &#x5C5E;&#x6027;&#x503C;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p><code>button</code> &#x5143;&#x7D20;&#x7684;&#x9ED8;&#x8BA4; <code>type</code> &#x4E3A; <code>submit</code>&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x7F6E;&#x4E8E; <code>form</code> &#x5143;&#x7D20;&#x4E2D;&#xFF0C;&#x70B9;&#x51FB;&#x540E;&#x5C06;&#x5BFC;&#x81F4;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x3002;&#x4E3A;&#x663E;&#x793A;&#x533A;&#x5206;&#x5176;&#x4F5C;&#x7528;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#xFF0C;&#x5FC5;&#x987B;&#x7ED9;&#x51FA; <code>type</code> &#x5C5E;&#x6027;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>&#x53D6;&#x6D88;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+</code></pre>
+<h4 id="t61[&#x5EFA;&#x8BAE;] &#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6309;&#x94AE;&#x7C7B;&#x5143;&#x7D20;&#x7684; name &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6309;&#x94AE;&#x7C7B;&#x5143;&#x7D20;&#x7684; name &#x5C5E;&#x6027;&#x3002; <a href="#t61[&#x5EFA;&#x8BAE;] &#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x4F7F;&#x7528;&#x6309;&#x94AE;&#x7C7B;&#x5143;&#x7D20;&#x7684; name &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x7531;&#x4E8E;&#x6D4F;&#x89C8;&#x5668;&#x517C;&#x5BB9;&#x6027;&#x95EE;&#x9898;&#xFF0C;&#x4F7F;&#x7528;&#x6309;&#x94AE;&#x7684; <code>name</code> &#x5C5E;&#x6027;&#x4F1A;&#x5E26;&#x6765;&#x8BB8;&#x591A;&#x96BE;&#x4EE5;&#x53D1;&#x73B0;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x53EF;&#x53C2;&#x8003;<a href="http://w3help.org/zh-cn/causes/CM2001">&#x6B64;&#x6587;</a>&#x3002;</p>
+<h3 id="t626.3 &#x53EF;&#x8BBF;&#x95EE;&#x6027; (A11Y)">6.3 &#x53EF;&#x8BBF;&#x95EE;&#x6027; (A11Y) <a href="#t626.3 &#x53EF;&#x8BBF;&#x95EE;&#x6027; (A11Y)"> # </a></h3>
+<h4 id="t63[&#x5EFA;&#x8BAE;] &#x8D1F;&#x8D23;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x7684;&#x6309;&#x94AE;&#x5728; DOM &#x4E2D;&#x7684;&#x987A;&#x5E8F;&#x5E94;&#x9760;&#x524D;&#x3002;">[&#x5EFA;&#x8BAE;] &#x8D1F;&#x8D23;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x7684;&#x6309;&#x94AE;&#x5728; DOM &#x4E2D;&#x7684;&#x987A;&#x5E8F;&#x5E94;&#x9760;&#x524D;&#x3002; <a href="#t63[&#x5EFA;&#x8BAE;] &#x8D1F;&#x8D23;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x7684;&#x6309;&#x94AE;&#x5728; DOM &#x4E2D;&#x7684;&#x987A;&#x5E8F;&#x5E94;&#x9760;&#x524D;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x8D1F;&#x8D23;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x7684;&#x6309;&#x94AE;&#x5E94;&#x76F8;&#x5BF9;&#x9760;&#x524D;&#xFF0C;&#x4EE5;&#x63D0;&#x9AD8;&#x53EF;&#x8BBF;&#x95EE;&#x6027;&#x3002;&#x5982;&#x679C;&#x5728; CSS &#x4E2D;&#x6307;&#x5B9A;&#x4E86; <code>float: right</code> &#x5219;&#x53EF;&#x80FD;&#x5BFC;&#x81F4;&#x89C6;&#x89C9;&#x4E0A;&#x4E3B;&#x6309;&#x94AE;&#x5728;&#x524D;&#xFF0C;&#x800C; DOM &#x4E2D;&#x4E3B;&#x6309;&#x94AE;&#x9760;&#x540E;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<span class="hljs-class">.buttons</span> <span class="hljs-class">.button-group</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> right</span></span>;
+}</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;buttons&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;button-group&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>&#x53D6;&#x6D88;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<span class="hljs-class">.buttons</span> <span class="hljs-tag">button</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">float</span>:<span class="hljs-value"> right</span></span>;
+}</span>
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;buttons&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;button&quot;</span>&gt;</span>&#x53D6;&#x6D88;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">button</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;submit&quot;</span>&gt;</span>&#x63D0;&#x4EA4;<span class="hljs-tag">&lt;/<span class="hljs-title">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<h4 id="t64[&#x5EFA;&#x8BAE;] &#x5F53;&#x4F7F;&#x7528; JavaScript &#x8FDB;&#x884C;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x5141;&#x8BB8;&#xFF0C;&#x5E94;&#x4F7F;&#x539F;&#x751F;&#x63D0;&#x4EA4;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5F53;&#x4F7F;&#x7528; JavaScript &#x8FDB;&#x884C;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x5141;&#x8BB8;&#xFF0C;&#x5E94;&#x4F7F;&#x539F;&#x751F;&#x63D0;&#x4EA4;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002; <a href="#t64[&#x5EFA;&#x8BAE;] &#x5F53;&#x4F7F;&#x7528; JavaScript &#x8FDB;&#x884C;&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x5141;&#x8BB8;&#xFF0C;&#x5E94;&#x4F7F;&#x539F;&#x751F;&#x63D0;&#x4EA4;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x5F53;&#x6D4F;&#x89C8;&#x5668; JS &#x8FD0;&#x884C;&#x9519;&#x8BEF;&#x6216;&#x5173;&#x95ED; JS &#x65F6;&#xFF0C;&#x63D0;&#x4EA4;&#x529F;&#x80FD;&#x5C06;&#x65E0;&#x6CD5;&#x5DE5;&#x4F5C;&#x3002;&#x5982;&#x679C;&#x6B63;&#x786E;&#x6307;&#x5B9A;&#x4E86; <code>form</code> &#x5143;&#x7D20;&#x7684; <code>action</code> &#x5C5E;&#x6027;&#x548C;&#x8868;&#x5355;&#x63A7;&#x4EF6;&#x7684; <code>name</code> &#x5C5E;&#x6027;&#x65F6;&#xFF0C;&#x63D0;&#x4EA4;&#x4ECD;&#x53EF;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">action</span>=<span class="hljs-value">&quot;/login&quot;</span> <span class="hljs-attribute">method</span>=<span class="hljs-value">&quot;post&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;username&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;text&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;&#x7528;&#x6237;&#x540D;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;password&quot;</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">&quot;&#x5BC6;&#x7801;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
+</code></pre>
+<h4 id="t65[&#x5EFA;&#x8BAE;] &#x5728;&#x9488;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x5F00;&#x53D1;&#x7684;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7684; type &#x5C5E;&#x6027;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728;&#x9488;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x5F00;&#x53D1;&#x7684;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7684; type &#x5C5E;&#x6027;&#x3002; <a href="#t65[&#x5EFA;&#x8BAE;] &#x5728;&#x9488;&#x5BF9;&#x79FB;&#x52A8;&#x8BBE;&#x5907;&#x5F00;&#x53D1;&#x7684;&#x9875;&#x9762;&#x65F6;&#xFF0C;&#x6839;&#x636E;&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7684; type &#x5C5E;&#x6027;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x6839;&#x636E;&#x5185;&#x5BB9;&#x7C7B;&#x578B;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x6846;&#x7C7B;&#x578B;&#xFF0C;&#x80FD;&#x83B7;&#x5F97;&#x80FD;&#x53CB;&#x597D;&#x7684;&#x8F93;&#x5165;&#x4F53;&#x9A8C;&#x3002;</p>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;date&quot;</span>&gt;</span>
+</code></pre>
+<h2 id="t667 &#x591A;&#x5A92;&#x4F53;">7 &#x591A;&#x5A92;&#x4F53; <a href="#t667 &#x591A;&#x5A92;&#x4F53;"> # </a></h2>
+<h4 id="t67[&#x5EFA;&#x8BAE;] &#x5F53;&#x5728;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528; audio &#x4EE5;&#x53CA; video &#x6807;&#x7B7E;&#x6765;&#x64AD;&#x653E;&#x97F3;&#x9891;&#x3001;&#x89C6;&#x9891;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x6CE8;&#x610F;&#x683C;&#x5F0F;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5F53;&#x5728;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528; audio &#x4EE5;&#x53CA; video &#x6807;&#x7B7E;&#x6765;&#x64AD;&#x653E;&#x97F3;&#x9891;&#x3001;&#x89C6;&#x9891;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x6CE8;&#x610F;&#x683C;&#x5F0F;&#x3002; <a href="#t67[&#x5EFA;&#x8BAE;] &#x5F53;&#x5728;&#x73B0;&#x4EE3;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F7F;&#x7528; audio &#x4EE5;&#x53CA; video &#x6807;&#x7B7E;&#x6765;&#x64AD;&#x653E;&#x97F3;&#x9891;&#x3001;&#x89C6;&#x9891;&#x65F6;&#xFF0C;&#x5E94;&#x5F53;&#x6CE8;&#x610F;&#x683C;&#x5F0F;&#x3002;"> # </a></h4>
+<p>&#x89E3;&#x91CA;&#xFF1A;</p>
+<p>&#x97F3;&#x9891;&#x5E94;&#x5C3D;&#x53EF;&#x80FD;&#x8986;&#x76D6;&#x5230;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>MP3</li>
+<li>WAV</li>
+<li>Ogg</li>
+</ul>
+<p>&#x89C6;&#x9891;&#x5E94;&#x5C3D;&#x53EF;&#x80FD;&#x8986;&#x76D6;&#x5230;&#x5982;&#x4E0B;&#x683C;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>MP4</li>
+<li>WebM</li>
+<li>Ogg</li>
+</ul>
+<h4 id="t68[&#x5EFA;&#x8BAE;] &#x5728;&#x652F;&#x6301; HTML5 &#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F18;&#x5148;&#x4F7F;&#x7528; audio &#x548C; video &#x6807;&#x7B7E;&#x6765;&#x5B9A;&#x4E49;&#x97F3;&#x89C6;&#x9891;&#x5143;&#x7D20;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728;&#x652F;&#x6301; HTML5 &#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F18;&#x5148;&#x4F7F;&#x7528; audio &#x548C; video &#x6807;&#x7B7E;&#x6765;&#x5B9A;&#x4E49;&#x97F3;&#x89C6;&#x9891;&#x5143;&#x7D20;&#x3002; <a href="#t68[&#x5EFA;&#x8BAE;] &#x5728;&#x652F;&#x6301; HTML5 &#x7684;&#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#x4F18;&#x5148;&#x4F7F;&#x7528; audio &#x548C; video &#x6807;&#x7B7E;&#x6765;&#x5B9A;&#x4E49;&#x97F3;&#x89C6;&#x9891;&#x5143;&#x7D20;&#x3002;"> # </a></h4>
+<h4 id="t69[&#x5EFA;&#x8BAE;] &#x4F7F;&#x7528;&#x9000;&#x5316;&#x5230;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5BF9;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x652F;&#x6301;&#x3002;">[&#x5EFA;&#x8BAE;] &#x4F7F;&#x7528;&#x9000;&#x5316;&#x5230;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5BF9;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x652F;&#x6301;&#x3002; <a href="#t69[&#x5EFA;&#x8BAE;] &#x4F7F;&#x7528;&#x9000;&#x5316;&#x5230;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5BF9;&#x591A;&#x6D4F;&#x89C8;&#x5668;&#x8FDB;&#x884C;&#x652F;&#x6301;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;audio.mp3&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;audio/mpeg&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;audio.ogg&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;audio/ogg&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">object</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">&quot;audio.mp3&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">embed</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;audio.swf&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">object</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">controls</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;video.mp4&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;video/mp4&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;video.ogg&quot;</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">&quot;video/ogg&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">object</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">&quot;video.mp4&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">embed</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">&quot;video.swf&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">object</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span>
+</code></pre>
+<h4 id="t70[&#x5EFA;&#x8BAE;] &#x53EA;&#x5728;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5F00;&#x542F;&#x97F3;&#x89C6;&#x9891;&#x7684;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x3002;">[&#x5EFA;&#x8BAE;] &#x53EA;&#x5728;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5F00;&#x542F;&#x97F3;&#x89C6;&#x9891;&#x7684;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x3002; <a href="#t70[&#x5EFA;&#x8BAE;] &#x53EA;&#x5728;&#x5FC5;&#x8981;&#x7684;&#x65F6;&#x5019;&#x5F00;&#x542F;&#x97F3;&#x89C6;&#x9891;&#x7684;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x3002;"> # </a></h4>
+<h4 id="t71[&#x5EFA;&#x8BAE;] &#x5728; object &#x6807;&#x7B7E;&#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x6307;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x8BE5;&#x6807;&#x7B7E;&#x7684;&#x8BF4;&#x660E;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728; object &#x6807;&#x7B7E;&#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x6307;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x8BE5;&#x6807;&#x7B7E;&#x7684;&#x8BF4;&#x660E;&#x3002; <a href="#t71[&#x5EFA;&#x8BAE;] &#x5728; object &#x6807;&#x7B7E;&#x5185;&#x90E8;&#x63D0;&#x4F9B;&#x6307;&#x793A;&#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301;&#x8BE5;&#x6807;&#x7B7E;&#x7684;&#x8BF4;&#x660E;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-title">object</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">&quot;100&quot;</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">&quot;50&quot;</span> <span class="hljs-attribute">data</span>=<span class="hljs-value">&quot;something.swf&quot;</span>&gt;</span>DO NOT SUPPORT THIS TAG<span class="hljs-tag">&lt;/<span class="hljs-title">object</span>&gt;</span>
+</code></pre>
+<h2 id="t728 &#x6A21;&#x677F;&#x4E2D;&#x7684; HTML">8 &#x6A21;&#x677F;&#x4E2D;&#x7684; HTML <a href="#t728 &#x6A21;&#x677F;&#x4E2D;&#x7684; HTML"> # </a></h2>
+<h4 id="t73[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x4F18;&#x5148;&#x4FDD;&#x8BC1; HTML &#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x89C4;&#x5219;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x4F18;&#x5148;&#x4FDD;&#x8BC1; HTML &#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x89C4;&#x5219;&#x3002; <a href="#t73[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x4F18;&#x5148;&#x4FDD;&#x8BC1; HTML &#x4EE3;&#x7801;&#x7684;&#x7F29;&#x8FDB;&#x89C4;&#x5219;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+{if $display == true}
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    {foreach $item_list as $item}
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>{$item.name}<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    {/foreach}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+{/if}
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+{if $display == true}
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    {foreach $item_list as $item}
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>{$item.name}<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    {/foreach}
+        <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+{/if}
+</code></pre>
+<h4 id="t74[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x5E94;&#x4EE5;&#x4FDD;&#x8BC1; HTML &#x5355;&#x4E2A;&#x6807;&#x7B7E;&#x8BED;&#x6CD5;&#x7684;&#x6B63;&#x786E;&#x6027;&#x4E3A;&#x57FA;&#x672C;&#x539F;&#x5219;&#x3002;">[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x5E94;&#x4EE5;&#x4FDD;&#x8BC1; HTML &#x5355;&#x4E2A;&#x6807;&#x7B7E;&#x8BED;&#x6CD5;&#x7684;&#x6B63;&#x786E;&#x6027;&#x4E3A;&#x57FA;&#x672C;&#x539F;&#x5219;&#x3002; <a href="#t74[&#x5EFA;&#x8BAE;] &#x6A21;&#x677F;&#x4EE3;&#x7801;&#x5E94;&#x4EE5;&#x4FDD;&#x8BC1; HTML &#x5355;&#x4E2A;&#x6807;&#x7B7E;&#x8BED;&#x6CD5;&#x7684;&#x6B63;&#x786E;&#x6027;&#x4E3A;&#x57FA;&#x672C;&#x539F;&#x5219;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;{if $item.type_id == $current_type}focus{/if}&quot;</span>&gt;</span>{ $item.type_name }<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span> {<span class="hljs-attribute">if</span> $<span class="hljs-attribute">item.type_id</span> =<span class="hljs-value">=</span> $<span class="hljs-attribute">current_type</span>} <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;focus&quot;</span><span class="hljs-value">{</span>/<span class="hljs-attribute">if</span>}&gt;</span>{ $item.type_name }<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+</code></pre>
+<h4 id="t75[&#x5EFA;&#x8BAE;] &#x5728;&#x5FAA;&#x73AF;&#x5904;&#x7406;&#x6A21;&#x677F;&#x6570;&#x636E;&#x6784;&#x9020;&#x8868;&#x683C;&#x65F6;&#xFF0C;&#x82E5;&#x8981;&#x6C42;&#x6BCF;&#x884C;&#x8F93;&#x51FA;&#x56FA;&#x5B9A;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5EFA;&#x8BAE;&#x5148;&#x5C06;&#x6570;&#x636E;&#x5206;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x3002;">[&#x5EFA;&#x8BAE;] &#x5728;&#x5FAA;&#x73AF;&#x5904;&#x7406;&#x6A21;&#x677F;&#x6570;&#x636E;&#x6784;&#x9020;&#x8868;&#x683C;&#x65F6;&#xFF0C;&#x82E5;&#x8981;&#x6C42;&#x6BCF;&#x884C;&#x8F93;&#x51FA;&#x56FA;&#x5B9A;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5EFA;&#x8BAE;&#x5148;&#x5C06;&#x6570;&#x636E;&#x5206;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x3002; <a href="#t75[&#x5EFA;&#x8BAE;] &#x5728;&#x5FAA;&#x73AF;&#x5904;&#x7406;&#x6A21;&#x677F;&#x6570;&#x636E;&#x6784;&#x9020;&#x8868;&#x683C;&#x65F6;&#xFF0C;&#x82E5;&#x8981;&#x6C42;&#x6BCF;&#x884C;&#x8F93;&#x51FA;&#x56FA;&#x5B9A;&#x7684;&#x4E2A;&#x6570;&#xFF0C;&#x5EFA;&#x8BAE;&#x5148;&#x5C06;&#x6570;&#x636E;&#x5206;&#x7EC4;&#xFF0C;&#x4E4B;&#x540E;&#x518D;&#x5FAA;&#x73AF;&#x8F93;&#x51FA;&#x3002;"> # </a></h4>
+<p>&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-html"><span class="hljs-comment">&lt;!-- good --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span>&gt;</span>
+    {foreach $item_list as $item_group}
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        {foreach $item_group as $item}
+        <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{ $item.name }<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        {/foreach}
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+    {/foreach}
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- bad --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">table</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+    {foreach $item_list as $item}
+    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{ $item.name }<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
+        {if $item@iteration is div by 5}
+    <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
+        {/if}
+    {/foreach}
+<span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+</code></pre>
+
+        <div class="copyright">Powered by <a href="https://github.com/jaywcjlove/idoc" target="_blank">idoc</a>. Dependence <a href="https://nodejs.org">Node.js</a> run.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
